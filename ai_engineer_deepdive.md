@@ -6,7 +6,7 @@ The AI Engineer bridges cutting-edge AI research with practical business solutio
 
 ## Introduction
 
-Organizations today are undergoing rapid digital transformations. AI is no longer experimental—it’s a core business function. According to a 2024 report by LinkedIn, roles requiring AI implementation skills grew 55% year-over-year (LinkedIn Talent Insights 2024). AI Engineers serve as the linchpin between data science research and scalable production systems, translating machine learning advances into deployable, trustworthy applications.
+Organizations today are undergoing rapid digital transformations. AI is no longer experimental—it's a core business function. According to a 2024 report by LinkedIn, roles requiring AI implementation skills grew 55% year-over-year (LinkedIn Talent Insights 2024). AI Engineers serve as the linchpin between data science research and scalable production systems, translating machine learning advances into deployable, trustworthy applications.
 
 ---
 
@@ -34,6 +34,12 @@ flowchart TD
     B --> C[Deployment & Infrastructure]
     C --> D[Monitoring & Retraining]
     D --> E[Ethics & Governance]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
 ```
 
 *This flowchart outlines the sequential responsibilities of an AI Engineer, from handling raw data to ensuring ethical compliance.*
@@ -60,8 +66,7 @@ flowchart TD
 ## Visual: AI Engineer Skill Set Composition
 
 ```mermaid
-pie
-    title AI Engineer Skill Set
+pie title AI Engineer Skill Set
     "Technical Skills" : 60
     "Soft Skills" : 40
 ```
@@ -76,18 +81,18 @@ The Bureau of Labor Statistics predicts that employment in AI-related roles will
 
 ---
 
-## Visual: AI Engineer Job Postings Growth
+## Visual: AI Engineer Tech Stack Breakdown
 
 ```mermaid
-bar
-    title AI Engineer Job Postings Growth
-    x-axis 2018,2019,2020,2021,2022,2023,2024
-    y-axis 0,20,40,60,80,100
-    series Demand
-    10,15,25,35,50,70,90
+pie title AI Engineer Technology Distribution
+    "Cloud Platforms (AWS/Azure/GCP)" : 30
+    "MLOps & Orchestration" : 25
+    "Programming & Frameworks" : 20
+    "Monitoring & Observability" : 15
+    "Security & Compliance" : 10
 ```
 
-*This bar chart illustrates the increasing demand for AI Engineers over recent years (fictional data for illustrative purposes).*
+*This breakdown shows the typical technology focus areas for AI Engineers, emphasizing cloud infrastructure and MLOps tools that enable production AI systems.*
 
 ---
 
@@ -107,7 +112,7 @@ bar
 
 ### 1. Google Cloud AI
 
-In 2024, Google Cloud’s translation team deployed quantized transformer models, reducing inference latency by 40% while maintaining BLEU score accuracy. AI Engineers led efforts in hardware-aware pruning and batch inference scheduling (Google Cloud Blog 2024).
+In 2024, Google Cloud's translation team deployed quantized transformer models, reducing inference latency by 40% while maintaining BLEU score accuracy. AI Engineers led efforts in hardware-aware pruning and batch inference scheduling (Google Cloud Blog 2024).
 
 ### 2. AWS & Financial Services
 
@@ -151,7 +156,7 @@ Harvard Business Review. "Governance in AI Deployments." *HBR*, 2024, hbr.org/20
 
 Indeed. "AI Engineer Salary Report." *Indeed.com*, 2025, [www.indeed.com/salaries](http://www.indeed.com/salaries).
 
-Index.dev. "AI Engineer vs. ML Engineer: What’s the Difference?" *Index.dev Blog*, 2025, index.dev/blog.
+Index.dev. "AI Engineer vs. ML Engineer: What's the Difference?" *Index.dev Blog*, 2025, index.dev/blog.
 
 LinkedIn Talent Insights. "Emerging Roles Report." *LinkedIn*, 2024, linkedin.com/talent/blog.
 
