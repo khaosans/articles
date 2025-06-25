@@ -63,14 +63,13 @@ Partnering across teams to align ML with business objectives:
 
 ```mermaid
 flowchart TD
-    A[Raw Data Sources<br/>Databases, APIs, Streams] --> B[Data Pipeline Engineering<br/>ETL, Validation, Feature Engineering]
-    B --> C[Model Training & Validation<br/>Distributed Training, Hyperparameter Tuning]
-    C --> D[Model Deployment<br/>Containerization, API Development]
-    D --> E[Production Serving<br/>Load Balancing, Caching, Monitoring]
-    E --> F[Performance Monitoring<br/>Metrics, Drift Detection, Alerting]
-    F --> G[Model Iteration<br/>Retraining, A/B Testing, Rollback]
+    A[Raw Data Sources: Databases, APIs, Streams] --> B[Data Pipeline Engineering: ETL, Validation, Feature Engineering]
+    B --> C[Model Training & Validation: Distributed Training, Hyperparameter Tuning]
+    C --> D[Model Deployment: Containerization, API Development]
+    D --> E[Production Serving: Load Balancing, Caching, Monitoring]
+    E --> F[Performance Monitoring: Metrics, Drift Detection, Alerting]
+    F --> G[Model Iteration: Retraining, A/B Testing, Rollback]
     G --> C
-    
     style A fill:#e1f5fe
     style B fill:#f3e5f5
     style C fill:#e8f5e8
@@ -80,7 +79,28 @@ flowchart TD
     style G fill:#e0f2f1
 ```
 
-*This comprehensive diagram shows the end-to-end machine learning lifecycle managed by ML Engineers, highlighting the iterative nature of production ML systems.*
+*This lifecycle diagram illustrates the iterative, end-to-end responsibilities of ML Engineers, from raw data ingestion to continuous model improvement in production environments. Each stage is interconnected, emphasizing the importance of feedback loops and robust engineering practices.*
+
+---
+
+## Visual: ML Engineer Skills Matrix
+
+```mermaid
+flowchart LR
+    A[Programming & ML Frameworks] --> B[Data Engineering]
+    B --> C[MLOps & Infrastructure]
+    C --> D[Deployment & Serving]
+    D --> E[Monitoring & Maintenance]
+    E --> F[Collaboration & Communication]
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+```
+
+*This skills matrix visualizes the core technical and collaborative competencies required for modern ML Engineers, highlighting the progression from foundational programming to advanced production and teamwork skills.*
 
 ---
 

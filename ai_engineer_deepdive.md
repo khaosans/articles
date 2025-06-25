@@ -34,7 +34,6 @@ flowchart TD
     B --> C[Deployment & Infrastructure]
     C --> D[Monitoring & Retraining]
     D --> E[Ethics & Governance]
-    
     style A fill:#e1f5fe
     style B fill:#f3e5f5
     style C fill:#e8f5e8
@@ -42,7 +41,26 @@ flowchart TD
     style E fill:#fce4ec
 ```
 
-*This flowchart outlines the sequential responsibilities of an AI Engineer, from handling raw data to ensuring ethical compliance.*
+*This workflow diagram narrates the sequential, interconnected responsibilities of an AI Engineer, from preparing data to ensuring ethical and compliant AI systems in production.*
+
+---
+
+## Visual: AI Engineer Core Responsibilities Map
+
+```mermaid
+flowchart LR
+    A[Data Engineering] --> B[Model Integration]
+    B --> C[Deployment & Infrastructure]
+    C --> D[Monitoring & Retraining]
+    D --> E[Ethics & Governance]
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+```
+
+*This map visualizes the core responsibilities of AI Engineers, emphasizing the progression from foundational data engineering to advanced deployment, monitoring, and ethical governance in enterprise AI systems.*
 
 ---
 
@@ -63,36 +81,9 @@ flowchart TD
 
 ---
 
-## Visual: AI Engineer Skill Set Composition
-
-```mermaid
-pie title AI Engineer Skill Set
-    "Technical Skills" : 60
-    "Soft Skills" : 40
-```
-
-*This pie chart represents the balance between technical and soft skills essential for AI Engineers.*
-
----
-
 ## Industry Demand & Market Trends
 
 The Bureau of Labor Statistics predicts that employment in AI-related roles will grow by 22% through 2030 (BLS 2023). A 2025 Indeed salary survey places the median AI Engineer salary in the U.S. at \$160,000, with senior roles surpassing \$200,000. AI engineering roles are particularly concentrated in finance, healthcare, logistics, and e-commerce, where automation and real-time prediction provide substantial competitive advantages (Indeed 2025).
-
----
-
-## Visual: AI Engineer Tech Stack Breakdown
-
-```mermaid
-pie title AI Engineer Technology Distribution
-    "Cloud Platforms (AWS/Azure/GCP)" : 30
-    "MLOps & Orchestration" : 25
-    "Programming & Frameworks" : 20
-    "Monitoring & Observability" : 15
-    "Security & Compliance" : 10
-```
-
-*This breakdown shows the typical technology focus areas for AI Engineers, emphasizing cloud infrastructure and MLOps tools that enable production AI systems.*
 
 ---
 

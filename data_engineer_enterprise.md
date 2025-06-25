@@ -33,11 +33,10 @@ Data Engineers design, implement, and maintain the systems that move, store, and
 
 ```mermaid
 flowchart TD
-    A[Source Systems] --> B[Ingestion Layer<br/>Kafka, APIs]
-    B --> C[Processing<br/>Spark, dbt]
-    C --> D[Data Warehouse<br/>BigQuery, Snowflake]
-    D --> E[Analytics & AI<br/>Dashboards, Models]
-    
+    A[Source Systems] --> B[Ingestion Layer: Kafka, APIs]
+    B --> C[Processing: Spark, dbt]
+    C --> D[Data Warehouse: BigQuery, Snowflake]
+    D --> E[Analytics & AI: Dashboards, Models]
     style A fill:#e3f2fd
     style B fill:#f3e5f5
     style C fill:#e8f5e8
@@ -45,7 +44,7 @@ flowchart TD
     style E fill:#fce4ec
 ```
 
-*This flowchart shows how Data Engineers enable the flow from raw data to insight-driven applications.*
+*This workflow diagram narrates the journey of data from raw source systems through ingestion, processing, warehousing, and finally to analytics and AI applications. It underscores the critical role of Data Engineers in enabling reliable, insight-driven pipelines.*
 
 ---
 
@@ -71,31 +70,24 @@ According to Indeed and Dice reports, Data Engineer has been one of the fastest-
 
 ---
 
-## Visual: Data Engineering Demand Growth
+## Visual: Modern Data Engineering Stack
 
 ```mermaid
-flowchart LR
-    subgraph "2018-2020"
-        A1[Data Engineer<br/>Emerging Role] --> B1[Growing Demand<br/>20% YoY]
-    end
-    
-    subgraph "2021-2023"
-        A2[Data Engineer<br/>High Growth] --> B2[Rapid Expansion<br/>50% YoY]
-    end
-    
-    subgraph "2024+"
-        A3[Data Engineer<br/>Critical Role] --> B3[Market Maturity<br/>Stable Growth]
-    end
-    
-    style A1 fill:#e1f5fe
-    style B1 fill:#c8e6c9
-    style A2 fill:#e1f5fe
-    style B2 fill:#c8e6c9
-    style A3 fill:#e1f5fe
-    style B3 fill:#c8e6c9
+flowchart TD
+    A[Data Sources] --> B[Ingestion: Kafka, APIs, CDC]
+    B --> C[Processing: Spark, Flink, dbt]
+    C --> D[Storage: Data Lake, Warehouse]
+    D --> E[Orchestration: Airflow, Prefect]
+    E --> F[Analytics & ML: BI Tools, ML Pipelines]
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
 ```
 
-*Demand for data engineers has consistently grown due to the explosion of data tools and pipelines.*
+*This stack diagram provides a modern, modular view of the data engineering ecosystem, showing how each technology layer builds on the previous to deliver robust analytics and machine learning capabilities.*
 
 ---
 
