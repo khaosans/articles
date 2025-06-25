@@ -70,13 +70,13 @@ flowchart TD
     E --> F[Performance Monitoring: Metrics, Drift Detection, Alerting]
     F --> G[Model Iteration: Retraining, A/B Testing, Rollback]
     G --> C
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
-    style G fill:#e0f2f1
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    style F fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
+    style G fill:#0097a7,stroke:#00695c,stroke-width:2px,color:#ffffff
 ```
 
 *This lifecycle diagram illustrates the iterative, end-to-end responsibilities of ML Engineers, from raw data ingestion to continuous model improvement in production environments. Each stage is interconnected, emphasizing the importance of feedback loops and robust engineering practices.*
@@ -92,12 +92,12 @@ flowchart LR
     C --> D[Deployment & Serving]
     D --> E[Monitoring & Maintenance]
     E --> F[Collaboration & Communication]
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    style F fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
 ```
 
 *This skills matrix visualizes the core technical and collaborative competencies required for modern ML Engineers, highlighting the progression from foundational programming to advanced production and teamwork skills.*
@@ -162,34 +162,6 @@ The ML Engineer role has experienced explosive growth, with job postings increas
 2. **Healthcare**: Medical imaging, drug discovery, patient care optimization
 3. **E-commerce**: Recommendation systems, demand forecasting, pricing optimization
 4. **Technology**: Cloud services, AI platforms, developer tools
-
----
-
-## Visual: Job Market Growth Trends
-
-```mermaid
-graph LR
-    subgraph "2018-2020"
-        A1[Data Scientist<br/>Dominant Role] --> B1[ML Engineer<br/>Emerging]
-    end
-    
-    subgraph "2021-2023"
-        A2[Data Scientist<br/>Stable Growth] --> B2[ML Engineer<br/>Rapid Growth]
-    end
-    
-    subgraph "2024+"
-        A3[Data Scientist<br/>Mature Market] --> B3[ML Engineer<br/>High Demand]
-    end
-    
-    style A1 fill:#ffcdd2
-    style B1 fill:#c8e6c9
-    style A2 fill:#ffcdd2
-    style B2 fill:#c8e6c9
-    style A3 fill:#ffcdd2
-    style B3 fill:#c8e6c9
-```
-
-*The evolution of ML Engineer demand relative to Data Scientist roles, showing the shift toward production-focused ML roles.*
 
 ---
 

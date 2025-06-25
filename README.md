@@ -103,13 +103,13 @@ flowchart TD
     E --> G
     G --> F
     
-    style A fill:#e3f2fd
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
-    style G fill:#e0f2f1
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    style F fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
+    style G fill:#0097a7,stroke:#00695c,stroke-width:2px,color:#ffffff
 ```
 
 ## 📊 Key Insights
@@ -130,9 +130,9 @@ flowchart LR
     B --> E[Production<br/>Systems]
     C --> F[Architecture<br/>Leadership]
     
-    style A fill:#e1f5fe
-    style B fill:#c8e6c9
-    style C fill:#fff3e0
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style C fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
 ```
 
 ### **Technology Stack**
@@ -225,13 +225,3 @@ This collection is designed to be a living resource. Contributions are welcome i
 - DataTalks.Club
 - Papers With Code
 - Kaggle
-
-## 📄 License
-
-This collection is provided for educational and professional development purposes. Please cite appropriately when using content in your own work.
-
----
-
-**Last Updated**: January 2025  
-**Maintained By**: ML Engineering Community  
-**Version**: 1.0 

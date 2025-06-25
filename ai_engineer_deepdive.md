@@ -34,11 +34,11 @@ flowchart TD
     B --> C[Deployment & Infrastructure]
     C --> D[Monitoring & Retraining]
     D --> E[Ethics & Governance]
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
 ```
 
 *This workflow diagram narrates the sequential, interconnected responsibilities of an AI Engineer, from preparing data to ensuring ethical and compliant AI systems in production.*
@@ -53,11 +53,11 @@ flowchart LR
     B --> C[Deployment & Infrastructure]
     C --> D[Monitoring & Retraining]
     D --> E[Ethics & Governance]
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
 ```
 
 *This map visualizes the core responsibilities of AI Engineers, emphasizing the progression from foundational data engineering to advanced deployment, monitoring, and ethical governance in enterprise AI systems.*
