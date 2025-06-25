@@ -3,6 +3,7 @@
 > **Comprehensive resources for Machine Learning Engineering in enterprise environments**
 
 [![ML Engineer](https://img.shields.io/badge/Role-ML%20Engineer-blue)](ml_engineer_enterprise.md)
+[![Data Scientist](https://img.shields.io/badge/Role-Data%20Scientist-indigo)](data_scientist_enterprise.md)
 [![AI Engineer](https://img.shields.io/badge/Role-AI%20Engineer-purple)](ai_engineer_deepdive.md)
 [![Data Engineer](https://img.shields.io/badge/Role-Data%20Engineer-green)](data_engineer_enterprise.md)
 [![AI Developer](https://img.shields.io/badge/Role-AI%20Developer-red)](ai_developer_enterprise.md)
@@ -16,6 +17,7 @@
 | **Role Guides** | **Implementation** | **Assessment** |
 |-----------------|-------------------|----------------|
 | [ML Engineer](ml_engineer_enterprise.md) | [MLOps Architecture](mlops_architecture_guide.md) | [Skills Assessment](ml_engineer_skills_assessment.md) |
+| [Data Scientist](data_scientist_enterprise.md) | | |
 | [AI Engineer](ai_engineer_deepdive.md) | | |
 | [Data Engineer](data_engineer_enterprise.md) | | |
 | [AI Developer](ai_developer_enterprise.md) | | |
@@ -27,7 +29,7 @@
 This collection provides enterprise-focused guidance for ML Engineering roles, from foundational concepts to advanced implementation patterns. Each guide includes real-world case studies, technical architectures, and practical best practices.
 
 ### **Core Focus Areas**
-- **Role Clarity**: Clear distinctions between ML, AI, and Data Engineering
+- **Role Clarity**: Clear distinctions between ML, AI, Data Science, and Data Engineering
 - **Production Readiness**: MLOps patterns and deployment strategies  
 - **Career Development**: Skill assessment and progression frameworks
 - **Enterprise Integration**: Scalable architectures and team structures
@@ -39,27 +41,30 @@ This collection provides enterprise-focused guidance for ML Engineering roles, f
 ```mermaid
 flowchart TD
     A[Data Sources] --> B[Data Engineering]
-    B --> C[ML Engineering]
-    C --> D[AI Engineering]
-    D --> E[AI Development]
-    E --> F[Production Systems]
+    B --> C[Data Science]
+    C --> D[ML Engineering]
+    D --> E[AI Engineering]
+    E --> F[AI Development]
+    F --> G[Production Systems]
     
-    B --> G[MLOps Architecture]
-    C --> G
-    D --> G
-    E --> G
-    G --> F
+    B --> H[MLOps Architecture]
+    C --> H
+    D --> H
+    E --> H
+    F --> H
+    H --> G
     
     style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
     style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
-    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
-    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
-    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
-    style F fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
-    style G fill:#0097a7,stroke:#00695c,stroke-width:2px,color:#ffffff
+    style C fill:#3f51b5,stroke:#303f9f,stroke-width:2px,color:#ffffff
+    style D fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style E fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style F fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    style G fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
+    style H fill:#0097a7,stroke:#00695c,stroke-width:2px,color:#ffffff
 ```
 
-*This architecture shows the progression from data sources through various engineering roles to production systems, with MLOps as the foundational infrastructure.*
+*This architecture shows the progression from data sources through various analytical and engineering roles to production systems, with MLOps as the foundational infrastructure.*
 
 ---
 
@@ -71,6 +76,11 @@ flowchart TD
 **Purpose**: Comprehensive overview of ML Engineering in enterprise settings  
 **Key Content**: Role definition, lifecycle management, case studies (Netflix, Shopify, Stripe)  
 **Best For**: Understanding the core ML Engineer role and responsibilities
+
+#### [Data Scientist Enterprise Guide](data_scientist_enterprise.md)
+**Purpose**: Analytical insights and business impact through data science  
+**Key Content**: Statistical analysis, model development, insight communication  
+**Best For**: Understanding analytical workflows and business impact measurement
 
 #### [AI Engineer Deep Dive](ai_engineer_deepdive.md)  
 **Purpose**: Advanced AI systems and infrastructure optimization  
@@ -105,8 +115,9 @@ flowchart TD
 
 ### **For Job Seekers**
 1. **Start Here**: [ML Engineer Guide](ml_engineer_enterprise.md) for role overview
-2. **Assess Skills**: [Skills Assessment](ml_engineer_skills_assessment.md) for gap analysis
-3. **Learn Implementation**: [MLOps Guide](mlops_architecture_guide.md) for technical depth
+2. **Analytical Focus**: [Data Scientist Guide](data_scientist_enterprise.md) for insights-driven approach
+3. **Assess Skills**: [Skills Assessment](ml_engineer_skills_assessment.md) for gap analysis
+4. **Learn Implementation**: [MLOps Guide](mlops_architecture_guide.md) for technical depth
 
 ### **For Hiring Managers**
 1. **Understand Roles**: Review all role guides for team structure planning
@@ -124,6 +135,7 @@ flowchart TD
 
 ### **Role Evolution**
 - **Data Engineer**: Foundation layer - data pipelines and warehousing
+- **Data Scientist**: Analytical layer - insights and business impact
 - **ML Engineer**: Core ML lifecycle - training, deployment, monitoring  
 - **AI Engineer**: Advanced AI systems - infrastructure and optimization
 - **AI Developer**: Application layer - product integration and UX
@@ -144,8 +156,9 @@ flowchart LR
 ```
 
 ### **Technology Stack**
-- **Programming**: Python, SQL, Scala, Java, JavaScript
+- **Programming**: Python, SQL, Scala, Java, JavaScript, R
 - **ML Frameworks**: TensorFlow, PyTorch, Scikit-learn, XGBoost
+- **Analytics**: Pandas, NumPy, Matplotlib, Seaborn, Tableau
 - **MLOps**: MLflow, Kubeflow, Seldon, Airflow, Docker, Kubernetes
 - **Cloud**: AWS SageMaker, Google Vertex AI, Azure ML
 - **Monitoring**: Prometheus, Grafana, custom dashboards
@@ -155,10 +168,13 @@ flowchart LR
 ## 📈 Industry Context
 
 ### **Salary Ranges (2024-2025)**
+- **Junior Data Scientist**: $85,000 - $120,000
 - **Junior ML Engineer**: $90,000 - $130,000
+- **Mid-Level Data Scientist**: $120,000 - $160,000
 - **Mid-Level ML Engineer**: $130,000 - $180,000  
+- **Senior Data Scientist**: $160,000 - $220,000+
 - **Senior ML Engineer**: $180,000 - $250,000+
-- **Principal/Staff ML Engineer**: $250,000 - $400,000+
+- **Principal/Staff**: $220,000 - $400,000+
 
 ### **High-Demand Sectors**
 1. **Fintech**: Fraud detection, risk assessment, algorithmic trading
@@ -185,6 +201,7 @@ This collection is designed as a living resource. Contributions are welcome in:
 - "Designing Machine Learning Systems" by Chip Huyen
 - "Building Machine Learning Powered Applications" by Emmanuel Ameisen
 - "MLOps Engineering at Scale" by Carl Osipov
+- "The Data Science Handbook" by Field Cady
 
 ### **Communities**
 - MLOps Community (Slack)
