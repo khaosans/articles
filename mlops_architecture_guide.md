@@ -1,5 +1,9 @@
 # MLOps Architecture Guide: Building Production-Ready ML Systems
 
+> **Navigation**: [🏠 Home](README.md) | [🔬 ML Engineer](ml_engineer_enterprise.md) | [🤖 AI Engineer](ai_engineer_deepdive.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [💻 AI Developer](ai_developer_enterprise.md) | [📋 Assessment](ml_engineer_skills_assessment.md)
+
+---
+
 ## Overview
 
 This guide provides a comprehensive framework for designing and implementing MLOps architectures that support the full machine learning lifecycle. It complements the ML Engineer role by providing practical implementation patterns and best practices.
@@ -43,13 +47,13 @@ flowchart TD
     E --> F[Feature Store]
     F --> G[Model Training]
     
-    style A fill:#e3f2fd
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
-    style G fill:#e0f2f1
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    style F fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
+    style G fill:#0097a7,stroke:#00695c,stroke-width:2px,color:#ffffff
 ```
 
 **Key Components:**
@@ -68,11 +72,11 @@ flowchart LR
     C --> D[Model Registry]
     D --> E[Model Serving]
     
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
 ```
 
 **Key Components:**
@@ -91,11 +95,11 @@ flowchart TD
     C --> D[Model Servers]
     D --> E[Monitoring]
     
-    style A fill:#e3f2fd
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
 ```
 
 **Key Components:**
@@ -359,113 +363,3 @@ spec:
   - port: 80
     targetPort: 8080
 ```
-
-### **2. Canary Deployment**
-
-```python
-# Example canary deployment implementation
-class CanaryDeployment:
-    def __init__(self, traffic_percentage=10):
-        self.traffic_percentage = traffic_percentage
-        self.metrics = defaultdict(list)
-    
-    def should_route_to_canary(self, user_id):
-        return hash(user_id) % 100 < self.traffic_percentage
-    
-    def evaluate_canary(self, duration_hours=1):
-        # Compare metrics between canary and production
-        canary_metrics = self.get_metrics('canary', duration_hours)
-        prod_metrics = self.get_metrics('production', duration_hours)
-        
-        # Check if canary performs better
-        return self.compare_metrics(canary_metrics, prod_metrics)
-    
-    def promote_canary(self):
-        if self.evaluate_canary():
-            # Update traffic routing to 100% canary
-            self.traffic_percentage = 100
-            return True
-        return False
-```
-
----
-
-## Cost Optimization
-
-### **1. Resource Management**
-
-```python
-# Example resource optimization
-class ResourceOptimizer:
-    def __init__(self):
-        self.resource_usage = {}
-    
-    def optimize_batch_size(self, model, memory_limit):
-        # Find optimal batch size for given memory
-        batch_sizes = [1, 2, 4, 8, 16, 32, 64, 128]
-        
-        for batch_size in batch_sizes:
-            memory_usage = self.estimate_memory_usage(model, batch_size)
-            if memory_usage <= memory_limit:
-                return batch_size
-        
-        return 1  # Fallback to batch size 1
-    
-    def auto_scale_instances(self, current_load, target_latency):
-        # Scale based on load and latency requirements
-        if current_load > 0.8:  # 80% utilization
-            return 'scale_up'
-        elif current_load < 0.3:  # 30% utilization
-            return 'scale_down'
-        else:
-            return 'maintain'
-```
-
-### **2. Model Optimization**
-
-```python
-# Example model optimization techniques
-class ModelOptimizer:
-    def __init__(self):
-        self.optimization_techniques = {
-            'quantization': self.quantize_model,
-            'pruning': self.prune_model,
-            'distillation': self.distill_model
-        }
-    
-    def quantize_model(self, model, precision='int8'):
-        # Convert model to lower precision
-        if hasattr(model, 'quantize'):
-            return model.quantize(precision)
-        return model
-    
-    def prune_model(self, model, sparsity=0.5):
-        # Remove less important weights
-        # Implementation depends on framework
-        return model
-    
-    def optimize_for_inference(self, model):
-        # Apply multiple optimization techniques
-        model = self.quantize_model(model)
-        model = self.prune_model(model)
-        return model
-```
-
----
-
-## Best Practices Summary
-
-1. **Start Simple**: Begin with basic CI/CD and gradually add complexity
-2. **Monitor Everything**: Track both technical and business metrics
-3. **Automate Testing**: Implement comprehensive testing at every stage
-4. **Version Everything**: Code, data, models, and configurations
-5. **Security First**: Implement security measures from the start
-6. **Cost Awareness**: Monitor and optimize resource usage
-7. **Documentation**: Maintain comprehensive documentation
-8. **Team Collaboration**: Foster collaboration between ML and DevOps teams
-
----
-
-## Conclusion
-
-A well-designed MLOps architecture is essential for successful ML deployments. This guide provides the foundational patterns and practices needed to build robust, scalable, and maintainable ML systems. Remember that MLOps is an iterative process—start with the basics and evolve your architecture based on your specific needs and constraints. 

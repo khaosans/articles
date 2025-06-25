@@ -1,6 +1,12 @@
-# ML Engineer Skills Assessment: A Comprehensive Evaluation Framework
+# ML Engineer Skills Assessment: Comprehensive Evaluation Framework
+
+> **Navigation**: [🏠 Home](README.md) | [🔬 ML Engineer](ml_engineer_enterprise.md) | [🤖 AI Engineer](ai_engineer_deepdive.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [💻 AI Developer](ai_developer_enterprise.md) | [🏗️ MLOps](mlops_architecture_guide.md)
+
+---
 
 ## Overview
+
+This comprehensive assessment framework provides structured evaluation criteria for ML Engineer skills across different career levels. It serves as a tool for self-assessment, career development, and hiring decisions in the machine learning engineering field.
 
 This guide provides a structured approach to assessing ML Engineer skills across different levels, from entry-level to senior positions. It includes practical evaluation criteria, sample questions, and learning paths for skill development.
 
