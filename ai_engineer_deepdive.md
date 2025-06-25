@@ -1,5 +1,7 @@
 # The AI Engineer in the Enterprise: A LinkedIn Deep Dive
 
+> **Navigation**: [🏠 Home](README.md) | [🔬 ML Engineer](ml_engineer_enterprise.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [💻 AI Developer](ai_developer_enterprise.md) | [🏗️ MLOps](mlops_architecture_guide.md) | [📋 Assessment](ml_engineer_skills_assessment.md)
+
 ## Abstract
 
 The AI Engineer bridges cutting-edge AI research with practical business solutions. As artificial intelligence permeates business operations, the need for professionals who can operationalize models is at an all-time high. This role is essential for converting theoretical models into robust production systems, driving innovation, and ensuring ethical implementation of AI.

@@ -1,5 +1,7 @@
 # The Machine Learning Engineer in the Enterprise: Bridging Models and Scale
 
+> **Navigation**: [🏠 Home](README.md) | [🤖 AI Engineer](ai_engineer_deepdive.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [💻 AI Developer](ai_developer_enterprise.md) | [🏗️ MLOps](mlops_architecture_guide.md) | [📋 Assessment](ml_engineer_skills_assessment.md)
+
 ## Abstract
 
 Machine Learning (ML) Engineers are the backbone of applied AI—turning raw models and ideas into scalable, robust systems. Their unique skillset bridges research and real-world impact, making them indispensable to any data-driven organization. This article explores the evolution, core responsibilities, required skills, challenges, and future directions of the ML Engineer role, with visuals and real-world examples.

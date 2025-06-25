@@ -1,5 +1,9 @@
 # The AI Developer in the Enterprise: Architecting Intelligence for the Real World
 
+> **Navigation**: [🏠 Home](README.md) | [🔬 ML Engineer](ml_engineer_enterprise.md) | [🤖 AI Engineer](ai_engineer_deepdive.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [🏗️ MLOps](mlops_architecture_guide.md) | [📋 Assessment](ml_engineer_skills_assessment.md)
+
+---
+
 ## Abstract
 
 AI Developers are the creative force behind today's intelligent applications—translating the theories of AI into practical products that shape how we live, work, and connect. In this deep dive, we explore the evolution, responsibilities, key skills, challenges, and future of the AI Developer, with visual examples and real industry case studies.
