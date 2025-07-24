@@ -1,0 +1,21 @@
+# macOS system files
+.DS_Store
+
+# Reports directory (optional, if you want to ignore PDFs in reports/)
+# reports/*.pdf
+
+# Node modules (if any JS tooling is used)
+node_modules/
+
+# Python cache (if any Python scripts are used)
+__pycache__/
+*.pyc
+
+# VSCode settings
+.vscode/
+
+# Logs
+*.log
+
+# Backup files
+*~ 
