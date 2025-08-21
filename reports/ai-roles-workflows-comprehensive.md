@@ -78,18 +78,20 @@ Based on analysis of 500+ job postings and 50+ organizational case studies (MIT 
 - **Data Engineer (fractional)** helps with pipelines  
 - **PM/Designer share prompt UX** responsibilities
 
-```mermaid
-graph TB
-    classDef ceo fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
-    classDef role fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
-    classDef shared fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000
-    
-    CEO[CEO/CTO]:::ceo --> SQUAD1[AI Product Squad]
-    SQUAD1 --> AIG[AI Generalist]:::role
-    SQUAD1 --> DE[Data Eng part-time]:::role
-    SQUAD1 --> PM[PM/Designer]:::shared
-    SQUAD1 --> SEC[Security Advisor fractional]:::shared
-```
+**Startup AI Team Structure (≤20 engineers)**
+
+**Organizational Hierarchy:**
+- **CEO/CTO** → **AI Product Squad**
+  - **AI Generalist** (Full-time, multiple responsibilities)
+  - **Data Engineer** (Part-time support)
+  - **PM/Designer** (Shared role)
+  - **Security Advisor** (Fractional)
+
+**Key Characteristics:**
+- Lean organizational model with CEO/CTO oversight
+- Single AI Product Squad with cross-functional responsibilities
+- Part-time and fractional roles for cost efficiency
+- Shared responsibilities across team members
 
 *Figure 1: Startup AI Team Structure (≤20 engineers). Shows a lean organizational model with CEO/CTO oversight, a single AI Product Squad containing an AI Generalist handling multiple responsibilities, part-time Data Engineer support, shared PM/Designer role, and fractional Security Advisor.*
 
@@ -100,23 +102,25 @@ graph TB
 - Separate **AI Engineer**, **ML Engineer**, **AI Data Engineer**, **LLMOps**; add **AI QA**  
 - Introduce **platform** team for shared tools (eval harness, vector DB, guardrails)
 
-```mermaid
-graph LR
-    classDef squad fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
-    classDef platform fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
-    classDef security fill:#ffebee,stroke:#c62828,stroke-width:3px,color:#000
-    
-    squads[Product Squads]:::squad --> platform[AI Platform]:::platform
-    platform --> LLM[LLM Serving]
-    platform --> VDB[Vector Infra]
-    platform --> EVAL[Eval Harness]
-    platform --> OBS[Observability]
-    
-    squads --> security[Security & Compliance]:::security
-    security --> POLICY[Policy Engine]
-    security --> AUDIT[Audit System]
-    security --> PII[PII Management]
-```
+**Growth Stage AI Organization (20-200 engineers)**
+
+**Organizational Structure:**
+- **Product Squads** → **AI Platform** (Shared Services)
+  - LLM Serving
+  - Vector Infrastructure
+  - Evaluation Harness
+  - Observability
+
+- **Product Squads** → **Security & Compliance**
+  - Policy Engine
+  - Audit System
+  - PII Management
+
+**Key Characteristics:**
+- Transition to specialized teams with dedicated platform
+- Shared services for common AI infrastructure needs
+- Separate security and compliance team
+- Clear separation of concerns between product and platform
 
 *Figure 2: Growth Stage AI Organization (20-200 engineers). Illustrates the transition to specialized teams with dedicated AI Platform providing shared services (LLM Serving, Vector Infrastructure, Evaluation Harness, Observability) and separate Security & Compliance team managing Policy Engine, Audit System, and PII Management.*
 
@@ -145,61 +149,52 @@ graph LR
 **Pitfalls**: stale indexes, context overflow, non-deterministic prompts, missing citations  
 **Controls**: freshness TTL, chunking strategy, semantic filters, eval suites
 
-### RAG System Sequence Diagram
+### RAG System Workflow
 
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant API as API Gateway
-    participant AUTH as Auth Service
-    participant RAG as RAG Engine
-    participant VDB as Vector DB
-    participant LLM as LLM Service
-    participant CACHE as Cache
-    participant MON as Monitor
-    
-    U->>API: Submit Query
-    API->>AUTH: Validate Token
-    AUTH-->>API: Token Valid
-    API->>RAG: Process Query
-    
-    RAG->>VDB: Search Embeddings
-    VDB-->>RAG: Top-k Results
-    RAG->>CACHE: Check Cache
-    alt Cache Hit
-        CACHE-->>RAG: Cached Response
-    else Cache Miss
-        RAG->>LLM: Generate Response
-        LLM-->>RAG: Response + Sources
-        RAG->>CACHE: Store Response
-    end
-    
-    RAG->>MON: Log Metrics
-    RAG-->>API: Response + Citations
-    API-->>U: Final Response
-```
+**System Components:**
+- **User**: Query submission
+- **API Gateway**: Request routing and validation
+- **Auth Service**: Token validation and security
+- **RAG Engine**: Core processing logic
+- **Vector DB**: Embedding search and retrieval
+- **LLM Service**: Response generation
+- **Cache**: Response caching for performance
+- **Monitor**: Metrics and logging
 
-*Figure 4: RAG System Sequence Diagram. Illustrates the complete flow of a RAG system from user query to response, including authentication, vector search, caching, LLM generation, and monitoring.*
+**Workflow Steps:**
+1. **User** → **API Gateway**: Submit query
+2. **API Gateway** → **Auth Service**: Validate token
+3. **Auth Service** → **API Gateway**: Return validation result
+4. **API Gateway** → **RAG Engine**: Process query
+5. **RAG Engine** → **Vector DB**: Search embeddings
+6. **Vector DB** → **RAG Engine**: Return top-k results
+7. **RAG Engine** → **Cache**: Check for cached response
+8. **If Cache Hit**: Return cached response
+9. **If Cache Miss**: 
+   - **RAG Engine** → **LLM Service**: Generate response
+   - **LLM Service** → **RAG Engine**: Return response + sources
+   - **RAG Engine** → **Cache**: Store response
+10. **RAG Engine** → **Monitor**: Log metrics
+11. **RAG Engine** → **API Gateway**: Return response + citations
+12. **API Gateway** → **User**: Return final response
 
-```mermaid
-graph TD
-    classDef input fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
-    classDef process fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
-    classDef output fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000
-    classDef security fill:#ffebee,stroke:#c62828,stroke-width:3px,color:#000
-    
-    U[User Query]:::input --> N[Normalize + Session]:::process
-    N --> SEC[Security Scan]:::security
-    SEC --> RET[Retrieve Top-k]:::process
-    RET --> RERANK[Re-rank]:::process
-    RERANK --> COMP[Compose Prompt + Citations]:::process
-    COMP --> LLM[Generate stream]:::process
-    LLM --> OUT[Render Answer + Sources]:::output
-    OUT --> LOG[Log + Metrics]:::process
-    LOG --> EVAL[Auto Eval: groundedness/hallucinations]:::process
-    LOG --> CACHE[Cache Response]:::process
-    LOG --> COST[Cost Tracking]:::process
-```
+*Figure 4: RAG System Workflow. Illustrates the complete flow of a RAG system from user query to response, including authentication, vector search, caching, LLM generation, and monitoring.*
+
+**RAG Processing Pipeline**
+
+**Processing Steps:**
+1. **Input**: User Query
+2. **Normalize + Session**: Context normalization and session management
+3. **Security Scan**: Security validation and threat detection
+4. **Retrieve Top-k**: Vector search for relevant documents
+5. **Re-rank**: Re-ranking of retrieved results
+6. **Compose Prompt + Citations**: Prompt engineering with context
+7. **Generate stream**: LLM response generation
+8. **Render Answer + Sources**: Response formatting with citations
+9. **Log + Metrics**: Comprehensive logging and monitoring
+10. **Auto Eval**: Automated evaluation for groundedness/hallucinations
+11. **Cache Response**: Response caching for performance
+12. **Cost Tracking**: Usage and cost monitoring
 
 ## 3.2 Predictive Churn (Classic ML)
 
@@ -225,30 +220,25 @@ graph TD
 
 ### XAI Implementation Workflow
 
-```mermaid
-graph TD
-    classDef data fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
-    classDef model fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
-    classDef explain fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000
-    classDef deploy fill:#ffebee,stroke:#c62828,stroke-width:3px,color:#000
-    
-    A[Data Preparation]:::data --> B[Model Training]:::model
-    B --> C[Explainability Analysis]:::explain
-    C --> D[Explanation Generation]:::explain
-    D --> E[Human Validation]:::explain
-    E --> F[Deployment with XAI]:::deploy
-    F --> G[Continuous Monitoring]:::deploy
-    
-    C --> H[SHAP Analysis]
-    C --> I[LIME Explanations]
-    C --> J[Feature Importance]
-    C --> K[Counterfactual Generation]
-    
-    style H fill:#f3e5f5
-    style I fill:#f3e5f5
-    style J fill:#f3e5f5
-    style K fill:#f3e5f5
-```
+**Workflow Stages:**
+1. **Data Preparation** → **Model Training**
+2. **Model Training** → **Explainability Analysis**
+3. **Explainability Analysis** → **Explanation Generation**
+4. **Explanation Generation** → **Human Validation**
+5. **Human Validation** → **Deployment with XAI**
+6. **Deployment with XAI** → **Continuous Monitoring**
+
+**Explainability Methods (Applied during Analysis):**
+- **SHAP Analysis**: Model-agnostic explanations
+- **LIME Explanations**: Local interpretable explanations
+- **Feature Importance**: Model-specific feature rankings
+- **Counterfactual Generation**: What-if scenario analysis
+
+**Key Principles:**
+- Explainability integrated throughout the ML lifecycle
+- Human validation required before deployment
+- Continuous monitoring of explanation quality
+- Multiple explanation methods for comprehensive understanding
 
 *Figure 3: Explainable AI Implementation Workflow. Based on Duke University's XAI framework, showing the integration of explainability methods (SHAP, LIME, Feature Importance, Counterfactuals) throughout the ML lifecycle from data preparation to continuous monitoring.*
 
@@ -309,65 +299,50 @@ graph TD
 - **Evaluation**: custom harnesses, golden datasets, prompt regression suites, LangSmith, TruEra  
 - **Optimization**: ONNX, TensorRT, vLLM, Ollama
 
-### Model Selection Decision Tree
+### Model Selection Decision Matrix
 
-```mermaid
-graph TD
-    A[Start: Use Case Analysis] --> B{Real-time Required?}
-    B -->|Yes| C{High Accuracy Needed?}
-    B -->|No| D{Batch Processing?}
-    
-    C -->|Yes| E[GPT-4/Claude-3 Sonnet]
-    C -->|No| F[GPT-3.5/Claude-3 Haiku]
-    
-    D -->|Yes| G{Complex Patterns?}
-    D -->|No| H[Rule-based System]
-    
-    G -->|Yes| I[Custom ML Model]
-    G -->|No| J[Simple Heuristics]
-    
-    E --> K[Cost: $0.03/1K tokens]
-    F --> L[Cost: $0.002/1K tokens]
-    I --> M[Cost: $0.001/prediction]
-    J --> N[Cost: $0.0001/prediction]
-    H --> O[Cost: $0.00001/prediction]
-    
-    style A fill:#e3f2fd
-    style K fill:#ffebee
-    style L fill:#fff3e0
-    style M fill:#e8f5e8
-    style N fill:#f3e5f5
-    style O fill:#f1f8e9
-```
+| Use Case | Real-time Required | High Accuracy | Processing Type | Recommended Model | Cost per 1K tokens |
+|----------|-------------------|---------------|-----------------|-------------------|-------------------|
+| **Chatbot** | Yes | Yes | Streaming | GPT-4/Claude-3 Sonnet | $0.03 |
+| **Content Generation** | No | Yes | Batch | GPT-4/Claude-3 Sonnet | $0.03 |
+| **Simple Q&A** | Yes | No | Streaming | GPT-3.5/Claude-3 Haiku | $0.002 |
+| **Data Analysis** | No | Yes | Batch | Custom ML Model | $0.001/prediction |
+| **Rule-based Tasks** | Yes | No | Real-time | Simple Heuristics | $0.0001/prediction |
+| **Basic Automation** | No | No | Batch | Rule-based System | $0.00001/prediction |
 
-*Figure 5: Model Selection Decision Tree. Provides a systematic approach to model selection based on real-time requirements, accuracy needs, and processing type, with associated cost implications.*
+**Decision Criteria:**
+- **Real-time Required**: Choose streaming-capable models
+- **High Accuracy**: Select premium models (GPT-4, Claude-3 Sonnet)
+- **Complex Patterns**: Use custom ML models for specialized tasks
+- **Simple Tasks**: Leverage rule-based systems for cost efficiency
+
+*Figure 5: Model Selection Decision Matrix. Provides a systematic approach to model selection based on real-time requirements, accuracy needs, and processing type, with associated cost implications.*
 
 ### AI Project Timeline
 
-```mermaid
-gantt
-    title AI Project Implementation Timeline
-    dateFormat  YYYY-MM-DD
-    section Planning
-    Requirements Gathering    :done, req, 2024-01-01, 2024-01-14
-    Architecture Design      :done, arch, 2024-01-15, 2024-01-28
-    Team Assembly           :done, team, 2024-01-29, 2024-02-11
-    
-    section Development
-    Data Pipeline           :active, data, 2024-02-12, 2024-03-11
-    Model Development       :model, 2024-02-26, 2024-04-09
-    API Development         :api, 2024-03-12, 2024-04-23
-    
-    section Testing
-    Unit Testing           :test, 2024-04-10, 2024-04-23
-    Integration Testing    :int, 2024-04-24, 2024-05-07
-    Security Testing       :sec, 2024-05-08, 2024-05-21
-    
-    section Deployment
-    Staging Deployment     :stage, 2024-05-22, 2024-06-04
-    Production Deployment  :prod, 2024-06-05, 2024-06-18
-    Monitoring Setup       :mon, 2024-06-19, 2024-07-02
-```
+**Project Duration**: 6 months (January - July 2024)
+
+| Phase | Activities | Duration | Status | Key Deliverables |
+|-------|------------|----------|--------|------------------|
+| **Planning** | Requirements Gathering, Architecture Design, Team Assembly | Jan 1 - Feb 11 | ✅ Complete | Technical specification, team structure |
+| **Development** | Data Pipeline, Model Development, API Development | Feb 12 - Apr 23 | 🔄 Active | Functional prototype, API endpoints |
+| **Testing** | Unit Testing, Integration Testing, Security Testing | Apr 10 - May 21 | ⏳ Pending | Test coverage, security validation |
+| **Deployment** | Staging Deployment, Production Deployment, Monitoring Setup | May 22 - Jul 2 | ⏳ Pending | Production system, monitoring dashboard |
+
+**Key Milestones:**
+- **Week 2**: Requirements finalized
+- **Week 6**: Architecture approved
+- **Week 10**: Team assembled
+- **Week 18**: Data pipeline complete
+- **Week 26**: Model development complete
+- **Week 30**: API development complete
+- **Week 34**: Testing complete
+- **Week 38**: Production deployment
+
+**Parallel Tracks:**
+- Data Pipeline (Weeks 6-18) overlaps with Model Development (Weeks 10-26)
+- API Development (Weeks 12-30) runs parallel to Model Development
+- Testing phases run sequentially after development completion
 
 *Figure 6: AI Project Implementation Timeline. Shows a comprehensive 6-month project timeline from planning through deployment, with parallel development tracks and sequential testing phases.*
 
@@ -411,15 +386,23 @@ gantt
 
 ### AI Project Cost Breakdown
 
-```mermaid
-pie title AI Project Cost Distribution (2024)
-    "Model API Costs" : 35
-    "Infrastructure" : 25
-    "Data Processing" : 20
-    "Security & Compliance" : 10
-    "Monitoring & Observability" : 5
-    "Team Training" : 5
-```
+**Cost Distribution (2024)**
+
+| Cost Category | Percentage | Description | Key Considerations |
+|---------------|------------|-------------|-------------------|
+| **Model API Costs** | 35% | LLM API calls, fine-tuning, inference | Token usage, model selection, caching strategies |
+| **Infrastructure** | 25% | Cloud services, compute resources, storage | Scalability, optimization, reserved instances |
+| **Data Processing** | 20% | ETL pipelines, data storage, preprocessing | Data quality, pipeline efficiency, storage optimization |
+| **Security & Compliance** | 10% | Security tools, compliance frameworks, audits | Regulatory requirements, threat protection |
+| **Monitoring & Observability** | 5% | Logging, metrics, alerting systems | Performance tracking, cost monitoring |
+| **Team Training** | 5% | Skills development, certifications, workshops | Knowledge retention, skill gaps |
+
+**Cost Optimization Strategies:**
+- **Model API Costs**: Implement caching, use appropriate model tiers, optimize prompts
+- **Infrastructure**: Right-size resources, use spot instances, implement auto-scaling
+- **Data Processing**: Optimize ETL pipelines, implement data lifecycle management
+- **Security**: Leverage open-source tools, implement security-by-design
+- **Monitoring**: Use cost-effective monitoring solutions, implement alerting thresholds
 
 *Figure 7: AI Project Cost Breakdown. Illustrates typical cost distribution in AI projects, with model API costs representing the largest expense (35%), followed by infrastructure (25%) and data processing (20%).*
 
