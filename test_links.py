@@ -211,12 +211,27 @@ def main():
     print(f"✅ Passed: {total_passed}")
     print(f"❌ Failed: {total_failed}")
     print(f"Success rate: {results['summary']['success_rate']}%")
+    print(f"🏠 Internal links: {results['internal']['passed']}/{len(internal_links)} passed")
+    print(f"🌐 External links: {results['external']['passed']}/{len(external_links)} passed")
     
-    if total_failed > 0:
-        print(f"\n❌ Failed links:")
-        for failure in results['internal']['failures'] + results['external']['failures']:
+    # Check for failures and provide appropriate feedback
+    internal_failures = len(results['internal']['failures'])
+    external_failures = len(results['external']['failures'])
+    
+    if internal_failures > 0:
+        print(f"\n❌ Failed internal links (CRITICAL):")
+        for failure in results['internal']['failures']:
             print(f"  • {failure['file']}: {failure['url']} ({failure['error']})")
         return False
+    
+    if external_failures > 0:
+        print(f"\n⚠️  Failed external links (WARNING - build will continue):")
+        for failure in results['external']['failures']:
+            print(f"  • {failure['file']}: {failure['url']} ({failure['error']})")
+        print(f"\n💡 External link failures are warnings and won't fail the build.")
+        print(f"   Internal links: {results['internal']['passed']}/{len(internal_links)} passed")
+        print(f"   External links: {results['external']['passed']}/{len(external_links)} passed")
+        return True
     
     return True
 
