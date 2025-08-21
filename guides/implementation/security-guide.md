@@ -52,6 +52,8 @@ graph TD
     I --> M[Audit Logging]
 ```
 
+*Figure 1: AI Security Threat Landscape. Categorizes AI security threats into external (prompt injection, model extraction, data poisoning) and internal (privilege escalation, data leakage, model manipulation) with corresponding defense layers.*
+
 ---
 
 ## 2. Security Architecture Framework
