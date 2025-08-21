@@ -64,10 +64,10 @@ Partnering across teams to align ML with business objectives:
 ## Visual: ML Engineer Lifecycle
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '14px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '15px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#1e40af', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e3a8a', 'lineColor': '#475569', 'secondaryColor': '#5b21b6', 'tertiaryColor': '#047857'}}}%%
 flowchart TD
     A["Raw Data Sources<br/>Databases, APIs, Streams"] --> B["Data Pipeline Engineering<br/>ETL, Validation, Feature Engineering"]
-    B --> C["Model Training & Validation<br/>Distributed Training, Hyperparameter Tuning"]
+    B --> C["Model Training and Validation<br/>Distributed Training, Hyperparameter Tuning"]
     C --> D["Model Deployment<br/>Containerization, API Development"]
     D --> E["Production Serving<br/>Load Balancing, Caching, Monitoring"]
     E --> F["Performance Monitoring<br/>Metrics, Drift Detection, Alerting"]
@@ -82,21 +82,23 @@ flowchart TD
     F1["Prometheus<br/>Grafana<br/>Alerting Systems"] --> F
     G1["Automated Pipelines<br/>Version Control<br/>Rollback Strategies"] --> G
     
-    style A fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
-    style B fill:#7c3aed,stroke:#5b21b6,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
-    style C fill:#059669,stroke:#047857,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
-    style D fill:#ea580c,stroke:#c2410c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
-    style E fill:#dc2626,stroke:#b91c1c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
-    style F fill:#0891b2,stroke:#0e7490,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
-    style G fill:#7c2d12,stroke:#92400e,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    %% Enhanced styling with better contrast and readability
+    style A fill:#1e40af,stroke:#1e3a8a,stroke-width:4px,color:#ffffff,font-weight:bold,font-size:17px
+    style B fill:#5b21b6,stroke:#4c1d95,stroke-width:4px,color:#ffffff,font-weight:bold,font-size:17px
+    style C fill:#047857,stroke:#065f46,stroke-width:4px,color:#ffffff,font-weight:bold,font-size:17px
+    style D fill:#c2410c,stroke:#9a3412,stroke-width:4px,color:#ffffff,font-weight:bold,font-size:17px
+    style E fill:#b91c1c,stroke:#991b1b,stroke-width:4px,color:#ffffff,font-weight:bold,font-size:17px
+    style F fill:#0e7490,stroke:#164e63,stroke-width:4px,color:#ffffff,font-weight:bold,font-size:17px
+    style G fill:#92400e,stroke:#78350f,stroke-width:4px,color:#ffffff,font-weight:bold,font-size:17px
     
-    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
-    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
-    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
-    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
-    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
-    style F1 fill:#cffafe,stroke:#06b6d4,stroke-width:1px,color:#164e63,font-weight:bold
-    style G1 fill:#fef3c7,stroke:#f59e0b,stroke-width:1px,color:#92400e,font-weight:bold
+    %% Enhanced sub-nodes with better contrast
+    style A1 fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+    style B1 fill:#7c3aed,stroke:#6d28d9,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+    style C1 fill:#10b981,stroke:#059669,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+    style D1 fill:#f97316,stroke:#ea580c,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+    style E1 fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+    style F1 fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+    style G1 fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
 ```
 
 *Figure 1: ML Engineer lifecycle showing the iterative, end-to-end process from raw data ingestion to continuous model improvement in production environments.*
@@ -106,7 +108,7 @@ flowchart TD
 ## Visual: ML Engineer Skills Matrix
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '14px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#1e40af', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e3a8a', 'lineColor': '#475569', 'secondaryColor': '#5b21b6', 'tertiaryColor': '#047857'}}}%%
 mindmap
   root((ML Engineer Skills))
     Programming and ML Frameworks
