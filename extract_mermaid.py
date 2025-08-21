@@ -63,7 +63,7 @@ def main():
     # Create output directory
     os.makedirs('extracted_diagrams', exist_ok=True)
     
-    # Create Puppeteer config
+    # Create Puppeteer config (for future use if needed)
     create_puppeteer_config()
     
     markdown_files = find_markdown_files()
