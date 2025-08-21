@@ -109,7 +109,7 @@ flowchart TD
 %%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
 mindmap
   root((ML Engineer Skills))
-    Programming & ML Frameworks
+    Programming and ML Frameworks
       Python
         TensorFlow
         PyTorch
@@ -129,7 +129,7 @@ mindmap
         SQL/NoSQL
         Data Warehouses
         Feature Stores
-    MLOps & Infrastructure
+    MLOps and Infrastructure
       Containerization
         Docker
         Kubernetes
@@ -142,7 +142,7 @@ mindmap
         Kubeflow
         MLflow
         TFX
-    Deployment & Serving
+    Deployment and Serving
       API Development
         REST APIs
         gRPC
@@ -151,7 +151,7 @@ mindmap
         TensorFlow Serving
         TorchServe
         Seldon Core
-    Monitoring & Maintenance
+    Monitoring and Maintenance
       Performance Monitoring
         Prometheus
         Grafana
@@ -160,7 +160,7 @@ mindmap
         Drift Detection
         A/B Testing
         Model Registry
-    Collaboration & Communication
+    Collaboration and Communication
       Cross-functional Teams
         Data Scientists
         Software Engineers
@@ -330,11 +330,11 @@ graph LR
         MLE5["Scalability"]
     end
     
-    DS1 -.->|Collaboration| MLE1
-    DS2 -.->|Data Quality| MLE2
-    DS3 -.->|Model Integration| MLE3
-    DS4 -.->|Requirements| MLE4
-    DS5 -.->|Validation| MLE5
+    DS1 -->|Collaboration| MLE1
+    DS2 -->|Data Quality| MLE2
+    DS3 -->|Model Integration| MLE3
+    DS4 -->|Requirements| MLE4
+    DS5 -->|Validation| MLE5
     
     style DS1 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
     style DS2 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold

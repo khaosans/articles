@@ -71,7 +71,7 @@ mindmap
       Programming Languages
         Python
         Java
-        C++
+        C Plus Plus
       ML Frameworks
         TensorFlow
         PyTorch
