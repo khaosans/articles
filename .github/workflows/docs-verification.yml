@@ -14,6 +14,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
+    - name: Verify repository structure
+      run: |
+        echo "Working directory: $(pwd)"
+        echo "Repository contents:"
+        ls -la
+        echo "Python scripts:"
+        ls -la *.py
+        echo "Markdown files:"
+        find . -name "*.md" | head -10
+      
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -22,7 +32,15 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests beautifulsoup4 lxml
+        pip install -r requirements.txt
+        
+    - name: Check Python script syntax
+      run: |
+        python -m py_compile verify_docs.py
+        python -m py_compile extract_mermaid.py
+        python -m py_compile test_links.py
+        python -m py_compile generate_report.py
+        echo "✅ All Python scripts have valid syntax"
         
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -32,10 +50,11 @@ jobs:
     - name: Install Mermaid CLI
       run: |
         npm install -g @mermaid-js/mermaid-cli
+        mmdc --version
         
     - name: Verify Puppeteer installation
       run: |
-        # Install Chrome dependencies
+        # Install Chrome dependencies and timeout
         sudo apt-get update
         sudo apt-get install -y \
           ca-certificates \
@@ -74,29 +93,58 @@ jobs:
           libxtst6 \
           lsb-release \
           wget \
-          xdg-utils
+          xdg-utils \
+          coreutils
         
     - name: Run documentation verification
-      run: python verify_docs.py
+      run: |
+        python verify_docs.py
+        echo "Verification script completed with exit code: $?"
       
     - name: Extract and test Mermaid diagrams
       run: |
         python extract_mermaid.py
+        echo "Checking extracted diagrams:"
+        ls -la extracted_diagrams/ || echo "No extracted_diagrams directory found"
+        if [ -d "extracted_diagrams" ]; then
+          echo "Diagram files:"
+          ls -la extracted_diagrams/*.mmd || echo "No .mmd files found"
+          echo "Summary file:"
+          cat extracted_diagrams/summary.json || echo "No summary.json found"
+        fi
         
     - name: Test Mermaid diagram rendering
       run: |
         # Test each extracted Mermaid diagram
         if [ -d "extracted_diagrams" ]; then
           cd extracted_diagrams
+          echo "Found diagrams:"
+          ls -la *.mmd || echo "No .mmd files found"
+          echo "Puppeteer config:"
+          cat puppeteer.config.json || echo "No puppeteer config found"
+          
           for diagram in *.mmd; do
             if [ -f "$diagram" ]; then
               echo "Testing diagram: $diagram"
-              mmdc -i "$diagram" -o "${diagram%.mmd}.png" --puppeteerConfig puppeteer.config.json
+              echo "Content preview:"
+              head -5 "$diagram"
+              
+              # Try rendering with timeout
+              timeout 60s mmdc -i "$diagram" -o "${diagram%.mmd}.png" --puppeteerConfig puppeteer.config.json
               if [ $? -eq 0 ]; then
                 echo "✅ Successfully rendered: $diagram"
               else
                 echo "❌ Failed to render: $diagram"
-                exit 1
+                echo "Puppeteer config:"
+                cat puppeteer.config.json
+                echo "Trying without puppeteer config..."
+                timeout 60s mmdc -i "$diagram" -o "${diagram%.mmd}.png"
+                if [ $? -eq 0 ]; then
+                  echo "✅ Successfully rendered without config: $diagram"
+                else
+                  echo "❌ Failed to render even without config: $diagram"
+                  exit 1
+                fi
               fi
             fi
           done
@@ -107,6 +155,12 @@ jobs:
     - name: Test internal links
       run: |
         python test_links.py
+        echo "Link test results:"
+        if [ -f "link_test_results.json" ]; then
+          cat link_test_results.json
+        else
+          echo "No link test results file found"
+        fi
         
     - name: Upload test artifacts
       if: always()
@@ -123,6 +177,12 @@ jobs:
       if: always()
       run: |
         python generate_report.py > verification_summary.md
+        echo "Report generated:"
+        ls -la verification_summary.md || echo "No report file generated"
+        if [ -f "verification_summary.md" ]; then
+          echo "Report content:"
+          head -20 verification_summary.md
+        fi
         
     - name: Comment PR with results
       if: github.event_name == 'pull_request'
