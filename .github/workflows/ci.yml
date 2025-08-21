@@ -40,13 +40,13 @@ jobs:
       run: |
         mypy tools/
     
-    - name: Verify Mermaid diagrams
+    - name: Verify Mermaid diagrams (basic syntax)
       run: |
         python3 tools/quick_mermaid_check.py
     
-    - name: Verify documentation
+    - name: Test Mermaid diagrams with MCP (fast)
       run: |
-        python3 tools/verify_docs.py
+        python3 tools/fast_mcp_test.py
     
     - name: Test with pytest
       run: |
