@@ -1,0 +1,10 @@
+graph LR
+    classDef governance fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef process fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    
+    A[AI Governance Council]:::governance --> B[Policy Development]:::process
+    B --> C[Risk Assessment]:::process
+    C --> D[Compliance Monitoring]:::process
+    D --> E[Incident Response]:::process
+    E --> F[Continuous Improvement]:::process
+    F --> B

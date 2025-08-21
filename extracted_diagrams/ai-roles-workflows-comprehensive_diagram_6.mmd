@@ -1,0 +1,26 @@
+graph TD
+    A[Start: Use Case Analysis] --> B{Real-time Required?}
+    B -->|Yes| C{High Accuracy Needed?}
+    B -->|No| D{Batch Processing?}
+    
+    C -->|Yes| E[GPT-4/Claude-3 Sonnet]
+    C -->|No| F[GPT-3.5/Claude-3 Haiku]
+    
+    D -->|Yes| G{Complex Patterns?}
+    D -->|No| H[Rule-based System]
+    
+    G -->|Yes| I[Custom ML Model]
+    G -->|No| J[Simple Heuristics]
+    
+    E --> K[Cost: $0.03/1K tokens]
+    F --> L[Cost: $0.002/1K tokens]
+    I --> M[Cost: $0.001/prediction]
+    J --> N[Cost: $0.0001/prediction]
+    H --> O[Cost: $0.00001/prediction]
+    
+    style A fill:#e3f2fd
+    style K fill:#ffebee
+    style L fill:#fff3e0
+    style M fill:#e8f5e8
+    style N fill:#f3e5f5
+    style O fill:#f1f8e9

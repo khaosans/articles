@@ -1,6 +1,6 @@
 # The Data Engineer in the Enterprise: Powering AI and Analytics at Scale
 
-> **Navigation**: [🏠 Home](../README.md) | [🔬 ML Engineer](ml-engineer.md) | [📊 Data Scientist](data-scientist.md) | [🤖 AI Engineer](ai-engineer.md) | [💻 AI Developer](ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
+> **Navigation**: [🏠 Home](../../README.md) | [🔬 ML Engineer](ml-engineer.md) | [📊 Data Scientist](data-scientist.md) | [🤖 AI Engineer](ai-engineer.md) | [💻 AI Developer](ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
 
 ## Abstract
 

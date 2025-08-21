@@ -1,0 +1,15 @@
+graph LR
+    classDef squad fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    classDef platform fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
+    classDef security fill:#ffebee,stroke:#c62828,stroke-width:3px,color:#000
+    
+    squads[Product Squads]:::squad --> platform[AI Platform]:::platform
+    platform --> LLM[LLM Serving]
+    platform --> VDB[Vector Infra]
+    platform --> EVAL[Eval Harness]
+    platform --> OBS[Observability]
+    
+    squads --> security[Security & Compliance]:::security
+    security --> POLICY[Policy Engine]
+    security --> AUDIT[Audit System]
+    security --> PII[PII Management]

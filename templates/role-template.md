@@ -1,6 +1,6 @@
 # [Role Name] in the Enterprise: [Brief Description]
 
-> **Navigation**: [🏠 Home](../README.md) | [🔬 ML Engineer](../roles/ml-engineer.md) | [🤖 AI Engineer](../roles/ai-engineer.md) | [📊 Data Scientist](../roles/data-scientist.md) | [📊 Data Engineer](../roles/data-engineer.md) | [💻 AI Developer](../roles/ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md)
+> **Navigation**: [🏠 Home](../../README.md) | [🔬 ML Engineer](../roles/ml-engineer.md) | [🤖 AI Engineer](../roles/ai-engineer.md) | [📊 Data Scientist](../roles/data-scientist.md) | [📊 Data Engineer](../roles/data-engineer.md) | [💻 AI Developer](../roles/ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md)
 
 ---
 

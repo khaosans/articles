@@ -1,0 +1,18 @@
+{
+  "internal": {
+    "passed": 112,
+    "failed": 0,
+    "failures": []
+  },
+  "external": {
+    "passed": 7,
+    "failed": 0,
+    "failures": []
+  },
+  "summary": {
+    "total_links": 119,
+    "total_passed": 119,
+    "total_failed": 0,
+    "success_rate": 100.0
+  }
+}

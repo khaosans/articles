@@ -1,0 +1,17 @@
+graph TD
+    classDef input fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    classDef process fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
+    classDef output fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000
+    classDef security fill:#ffebee,stroke:#c62828,stroke-width:3px,color:#000
+    
+    U[User Query]:::input --> N[Normalize + Session]:::process
+    N --> SEC[Security Scan]:::security
+    SEC --> RET[Retrieve Top-k]:::process
+    RET --> RERANK[Re-rank]:::process
+    RERANK --> COMP[Compose Prompt + Citations]:::process
+    COMP --> LLM[Generate stream]:::process
+    LLM --> OUT[Render Answer + Sources]:::output
+    OUT --> LOG[Log + Metrics]:::process
+    LOG --> EVAL[Auto Eval: groundedness/hallucinations]:::process
+    LOG --> CACHE[Cache Response]:::process
+    LOG --> COST[Cost Tracking]:::process

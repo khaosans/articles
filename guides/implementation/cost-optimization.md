@@ -1,6 +1,6 @@
 # AI/ML Cost Optimization Guide: Enterprise Strategies
 
-> **Navigation**: [🏠 Home](../README.md) | [🔬 ML Engineer](../roles/ml-engineer.md) | [🤖 AI Engineer](../roles/ai-engineer.md) | [📊 Data Scientist](../roles/data-scientist.md) | [📊 Data Engineer](../roles/data-engineer.md) | [💻 AI Developer](../roles/ai-developer.md) | [🏗️ MLOps](mlops-architecture.md)
+> **Navigation**: [🏠 Home](../../README.md) | [🔬 ML Engineer](../roles/ml-engineer.md) | [🤖 AI Engineer](../roles/ai-engineer.md) | [📊 Data Scientist](../roles/data-scientist.md) | [📊 Data Engineer](../roles/data-engineer.md) | [💻 AI Developer](../roles/ai-developer.md) | [🏗️ MLOps](mlops-architecture.md)
 
 ---
 

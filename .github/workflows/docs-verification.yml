@@ -1,0 +1,141 @@
+name: Documentation Verification
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  verify-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4 lxml
+        
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install Mermaid CLI
+      run: |
+        npm install -g @mermaid-js/mermaid-cli
+        
+    - name: Verify Puppeteer installation
+      run: |
+        # Install Chrome dependencies
+        sudo apt-get update
+        sudo apt-get install -y \
+          ca-certificates \
+          fonts-liberation \
+          libappindicator3-1 \
+          libasound2 \
+          libatk-bridge2.0-0 \
+          libatk1.0-0 \
+          libc6 \
+          libcairo2 \
+          libcups2 \
+          libdbus-1-3 \
+          libexpat1 \
+          libfontconfig1 \
+          libgbm1 \
+          libgcc1 \
+          libglib2.0-0 \
+          libgtk-3-0 \
+          libnspr4 \
+          libnss3 \
+          libpango-1.0-0 \
+          libpangocairo-1.0-0 \
+          libstdc++6 \
+          libx11-6 \
+          libx11-xcb1 \
+          libxcb1 \
+          libxcomposite1 \
+          libxcursor1 \
+          libxdamage1 \
+          libxext6 \
+          libxfixes3 \
+          libxi6 \
+          libxrandr2 \
+          libxrender1 \
+          libxss1 \
+          libxtst6 \
+          lsb-release \
+          wget \
+          xdg-utils
+        
+    - name: Run documentation verification
+      run: python verify_docs.py
+      
+    - name: Extract and test Mermaid diagrams
+      run: |
+        python extract_mermaid.py
+        
+    - name: Test Mermaid diagram rendering
+      run: |
+        # Test each extracted Mermaid diagram
+        if [ -d "extracted_diagrams" ]; then
+          cd extracted_diagrams
+          for diagram in *.mmd; do
+            if [ -f "$diagram" ]; then
+              echo "Testing diagram: $diagram"
+              mmdc -i "$diagram" -o "${diagram%.mmd}.png" --puppeteerConfig puppeteer.config.json
+              if [ $? -eq 0 ]; then
+                echo "✅ Successfully rendered: $diagram"
+              else
+                echo "❌ Failed to render: $diagram"
+                exit 1
+              fi
+            fi
+          done
+        else
+          echo "No diagrams found to test"
+        fi
+        
+    - name: Test internal links
+      run: |
+        python test_links.py
+        
+    - name: Upload test artifacts
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: verification-results
+        path: |
+          extracted_diagrams/
+          *.log
+          verification_report.json
+        retention-days: 7
+        
+    - name: Generate verification report
+      if: always()
+      run: |
+        python generate_report.py > verification_summary.md
+        
+    - name: Comment PR with results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          if (fs.existsSync('verification_summary.md')) {
+            const report = fs.readFileSync('verification_summary.md', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 📋 Documentation Verification Report\n\n${report}`
+            });
+          }

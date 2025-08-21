@@ -1,0 +1,18 @@
+graph TB
+    classDef layer fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef control fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef monitor fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    
+    A[User/System Request]:::layer --> B[Identity Verification]:::control
+    B --> C[Device Trust Assessment]:::control
+    C --> D[Network Segmentation]:::control
+    D --> E[Application Access Control]:::control
+    E --> F[Data Access Control]:::control
+    F --> G[AI Model Access]:::layer
+    
+    H[Continuous Monitoring]:::monitor --> B
+    H --> C
+    H --> D
+    H --> E
+    H --> F
+    H --> G

@@ -1,0 +1,55 @@
+graph TB
+    subgraph "Layer 7: Business Logic"
+        A[AI Application]
+        B[Business Rules]
+    end
+    
+    subgraph "Layer 6: Application Security"
+        C[Input Validation]
+        D[Prompt Sanitization]
+        E[Output Filtering]
+    end
+    
+    subgraph "Layer 5: AI Model Security"
+        F[Model Watermarking]
+        G[Adversarial Testing]
+        H[Safety Filters]
+    end
+    
+    subgraph "Layer 4: Data Security"
+        I[Data Encryption]
+        J[PII Detection]
+        K[Access Controls]
+    end
+    
+    subgraph "Layer 3: Network Security"
+        L[API Gateway]
+        M[Rate Limiting]
+        N[DDoS Protection]
+    end
+    
+    subgraph "Layer 2: Infrastructure Security"
+        O[Container Security]
+        P[Secrets Management]
+        Q[Network Segmentation]
+    end
+    
+    subgraph "Layer 1: Physical Security"
+        R[Data Center Security]
+        S[Hardware Security]
+    end
+    
+    A --> C
+    C --> F
+    F --> I
+    I --> L
+    L --> O
+    O --> R
+    
+    style A fill:#e3f2fd
+    style C fill:#e8f5e8
+    style F fill:#fff3e0
+    style I fill:#ffebee
+    style L fill:#f3e5f5
+    style O fill:#f1f8e9
+    style R fill:#e0f2f1

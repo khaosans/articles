@@ -1,0 +1,10 @@
+graph TB
+    classDef ceo fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
+    classDef role fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    classDef shared fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000
+    
+    CEO[CEO/CTO]:::ceo --> SQUAD1[AI Product Squad]
+    SQUAD1 --> AIG[AI Generalist]:::role
+    SQUAD1 --> DE[Data Eng part-time]:::role
+    SQUAD1 --> PM[PM/Designer]:::shared
+    SQUAD1 --> SEC[Security Advisor fractional]:::shared

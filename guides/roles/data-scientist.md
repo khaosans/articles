@@ -1,6 +1,6 @@
 # The Data Scientist in the Enterprise: From Insights to Impact
 
-> **Navigation**: [🏠 Home](../README.md) | [🔬 ML Engineer](ml-engineer.md) | [🤖 AI Engineer](ai-engineer.md) | [📊 Data Engineer](data-engineer.md) | [💻 AI Developer](ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
+> **Navigation**: [🏠 Home](../../README.md) | [🔬 ML Engineer](ml-engineer.md) | [🤖 AI Engineer](ai-engineer.md) | [📊 Data Engineer](data-engineer.md) | [💻 AI Developer](ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
 
 ---
 

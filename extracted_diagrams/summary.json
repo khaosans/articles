@@ -1,0 +1,19 @@
+{
+  "total_files": 18,
+  "total_diagrams": 35,
+  "diagrams_by_file": {
+    "./README.md": 1,
+    "./guides/roles/ml-engineer.md": 2,
+    "./guides/roles/ai-engineer.md": 2,
+    "./guides/roles/data-scientist.md": 2,
+    "./guides/roles/data-engineer.md": 2,
+    "./guides/roles/ai-developer.md": 3,
+    "./guides/assessment/career-pathways.md": 1,
+    "./guides/assessment/performance-metrics.md": 1,
+    "./guides/implementation/cost-optimization.md": 1,
+    "./guides/implementation/security-guide.md": 5,
+    "./guides/implementation/mlops-architecture.md": 3,
+    "./templates/role-template.md": 1,
+    "./reports/ai-roles-workflows-comprehensive.md": 11
+  }
+}

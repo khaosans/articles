@@ -1,6 +1,6 @@
 # The AI Developer in the Enterprise: Architecting Intelligence for the Real World
 
-> **Navigation**: [🏠 Home](../README.md) | [🔬 ML Engineer](ml-engineer.md) | [📊 Data Scientist](data-scientist.md) | [🤖 AI Engineer](ai-engineer.md) | [📊 Data Engineer](data-engineer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
+> **Navigation**: [🏠 Home](../../README.md) | [🔬 ML Engineer](ml-engineer.md) | [📊 Data Scientist](data-scientist.md) | [🤖 AI Engineer](ai-engineer.md) | [📊 Data Engineer](data-engineer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
 
 ---
 

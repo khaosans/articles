@@ -1,0 +1,22 @@
+gantt
+    title AI Security Incident Response Timeline
+    dateFormat  YYYY-MM-DD
+    section Detection
+    Threat Detection     :detect, 2024-01-01, 1h
+    Alert Generation     :alert, after detect, 30m
+    Initial Assessment  :assess, after alert, 1h
+    
+    section Response
+    Containment         :contain, after assess, 2h
+    Investigation       :investigate, after contain, 4h
+    Remediation         :remediate, after investigate, 6h
+    
+    section Recovery
+    System Restoration  :restore, after remediate, 2h
+    Validation          :validate, after restore, 1h
+    Monitoring          :monitor, after validate, 24h
+    
+    section Post-Incident
+    Documentation       :doc, after monitor, 4h
+    Lessons Learned     :learn, after doc, 2h
+    Process Update      :update, after learn, 1h

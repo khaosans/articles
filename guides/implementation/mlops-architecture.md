@@ -1,6 +1,6 @@
 # MLOps Architecture Guide: Building Production-Ready ML Systems
 
-> **Navigation**: [🏠 Home](../README.md) | [🔬 ML Engineer](../roles/ml-engineer.md) | [📊 Data Scientist](../roles/data-scientist.md) | [🤖 AI Engineer](../roles/ai-engineer.md) | [📊 Data Engineer](../roles/data-engineer.md) | [💻 AI Developer](../roles/ai-developer.md) | [📋 Assessment](../assessment/skills-assessment.md)
+> **Navigation**: [🏠 Home](../../README.md) | [🔬 ML Engineer](../roles/ml-engineer.md) | [📊 Data Scientist](../roles/data-scientist.md) | [🤖 AI Engineer](../roles/ai-engineer.md) | [📊 Data Engineer](../roles/data-engineer.md) | [💻 AI Developer](../roles/ai-developer.md) | [📋 Assessment](../assessment/skills-assessment.md)
 
 ---
 
