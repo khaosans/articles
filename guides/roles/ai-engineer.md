@@ -1,6 +1,6 @@
 # The AI Engineer in the Enterprise: A LinkedIn Deep Dive
 
-> **Navigation**: [🏠 Home](README.md) | [🔬 ML Engineer](ml_engineer_enterprise.md) | [📊 Data Scientist](data_scientist_enterprise.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [💻 AI Developer](ai_developer_enterprise.md) | [🏗️ MLOps](mlops_architecture_guide.md) | [📋 Assessment](ml_engineer_skills_assessment.md)
+> **Navigation**: [🏠 Home](../README.md) | [🔬 ML Engineer](ml-engineer.md) | [📊 Data Scientist](data-scientist.md) | [📊 Data Engineer](data-engineer.md) | [💻 AI Developer](ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
 
 ## Abstract
 

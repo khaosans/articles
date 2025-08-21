@@ -1,6 +1,6 @@
 # The Machine Learning Engineer in the Enterprise: Bridging Models and Scale
 
-> **Navigation**: [🏠 Home](README.md) | [📊 Data Scientist](data_scientist_enterprise.md) | [🤖 AI Engineer](ai_engineer_deepdive.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [💻 AI Developer](ai_developer_enterprise.md) | [🏗️ MLOps](mlops_architecture_guide.md) | [📋 Assessment](ml_engineer_skills_assessment.md)
+> **Navigation**: [🏠 Home](../README.md) | [📊 Data Scientist](data-scientist.md) | [🤖 AI Engineer](ai-engineer.md) | [📊 Data Engineer](data-engineer.md) | [💻 AI Developer](ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
 
 ## Abstract
 
