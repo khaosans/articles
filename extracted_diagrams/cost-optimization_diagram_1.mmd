@@ -1,11 +1,17 @@
 graph LR
-    classDef cost fill:#ffebee,stroke:#d32f2f,stroke-width:2px
-    classDef trend fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    %% Enhanced AI/ML Cost Trends with better readability
+    classDef cost fill:#ffebee,stroke:#d32f2f,stroke-width:3px,color:#c62828,font-weight:bold
+    classDef trend fill:#e8f5e8,stroke:#388e3c,stroke-width:3px,color:#2e7d32,font-weight:bold
     
-    A[2023: $2.5B]:::cost --> B[2024: $3.5B]:::cost
-    B --> C[2025: $4.9B]:::cost
+    %% Cost progression with enhanced styling
+    A["💰 2023: $2.5B<br/>Base Infrastructure"]:::cost --> B["💰 2024: $3.5B<br/>Growth Phase"]:::cost
+    B --> C["💰 2025: $4.9B<br/>Scale Phase"]:::cost
     
-    D[Cost Drivers]:::trend --> E[Model Complexity]
-    D --> F[Data Volume]
-    D --> G[Real-time Processing]
-    D --> H[Regulatory Requirements]
+    %% Cost drivers with icons and descriptions
+    D["📈 Cost Drivers<br/>Growth Factors"]:::trend --> E["🤖 Model Complexity<br/>Larger Models, More Parameters"]
+    D --> F["📊 Data Volume<br/>Big Data Processing"]
+    D --> G["⚡ Real-time Processing<br/>Low Latency Requirements"]
+    D --> H["📋 Regulatory Requirements<br/>Compliance Costs"]
+    
+    %% Add descriptive title
+    title AI/ML Infrastructure Cost Trends - Annual Growth Analysis

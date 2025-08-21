@@ -123,28 +123,36 @@ The goal is not to provide a static rulebook, but rather a comprehensive startin
 
 ```mermaid
 graph TD
-    classDef data fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    classDef ml fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000
-    classDef ai fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
-    classDef ops fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+    %% Enhanced styling with better contrast and readability
+    classDef data fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#1565c0,font-weight:bold
+    classDef ml fill:#e8f5e8,stroke:#388e3c,stroke-width:3px,color:#2e7d32,font-weight:bold
+    classDef ai fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#ef6c00,font-weight:bold
+    classDef ops fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#6a1b9a,font-weight:bold
+    classDef security fill:#ffebee,stroke:#d32f2f,stroke-width:3px,color:#c62828,font-weight:bold
+    classDef cost fill:#fff8e1,stroke:#fbc02d,stroke-width:3px,color:#f57f17,font-weight:bold
     
-    A[Data Sources]:::data --> B[Data Engineering]:::data
-    B --> C[Data Science]:::ml
-    C --> D[ML Engineering]:::ml
-    D --> E[AI Engineering]:::ai
-    E --> F[AI Development]:::ai
-    F --> G[Production Systems]:::ops
+    %% Main workflow with improved spacing
+    A["📊 Data Sources<br/>Databases, APIs, Streams"]:::data --> B["🔧 Data Engineering<br/>ETL, Validation, Pipelines"]:::data
+    B --> C["🔬 Data Science<br/>Analysis, Modeling, Insights"]:::ml
+    C --> D["⚙️ ML Engineering<br/>Training, Deployment, MLOps"]:::ml
+    D --> E["🤖 AI Engineering<br/>Integration, Optimization, Governance"]:::ai
+    E --> F["💻 AI Development<br/>Applications, UX, Products"]:::ai
+    F --> G["🚀 Production Systems<br/>Scalable, Monitored, Reliable"]:::ops
     
-    B --> H[MLOps Architecture]:::ops
+    %% MLOps integration with clearer connections
+    B --> H["🏗️ MLOps Architecture<br/>CI/CD, Monitoring, Automation"]:::ops
     C --> H
     D --> H
     E --> H
     F --> H
     H --> G
     
-    %% Add security and cost layers
-    I[Security & Compliance]:::ops --> H
-    J[Cost Management]:::ops --> H
+    %% Security and cost management with enhanced visibility
+    I["🔒 Security & Compliance<br/>Access Control, Audit, Privacy"]:::security --> H
+    J["💰 Cost Management<br/>Optimization, ROI, Budget"]:::cost --> H
+    
+    %% Add descriptive title
+    title AI/ML Enterprise Workflow Overview
 ```
 
 *Figure 1: Enterprise AI Architecture Flow. This architecture shows the progression from data sources through various analytical and engineering roles to production systems, with MLOps, security, and cost management as foundational infrastructure.*

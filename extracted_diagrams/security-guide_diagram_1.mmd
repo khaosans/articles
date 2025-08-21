@@ -1,16 +1,23 @@
 graph TD
-    classDef threat fill:#ffebee,stroke:#d32f2f,stroke-width:2px
-    classDef defense fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    %% Enhanced Security Threat Model with better readability
+    classDef threat fill:#ffebee,stroke:#d32f2f,stroke-width:3px,color:#c62828,font-weight:bold
+    classDef defense fill:#e8f5e8,stroke:#388e3c,stroke-width:3px,color:#2e7d32,font-weight:bold
     
-    A[External Threats]:::threat --> B[Prompt Injection]
-    A --> C[Model Extraction]
-    A --> D[Data Poisoning]
+    %% External threats with icons and descriptions
+    A["🌐 External Threats<br/>Malicious Actors, Attacks"]:::threat --> B["💉 Prompt Injection<br/>Adversarial Inputs"]
+    A --> C["📋 Model Extraction<br/>Model Stealing"]
+    A --> D["☠️ Data Poisoning<br/>Training Data Attacks"]
     
-    E[Internal Threats]:::threat --> F[Privilege Escalation]
-    E --> G[Data Leakage]
-    E --> H[Model Manipulation]
+    %% Internal threats with icons and descriptions
+    E["🏢 Internal Threats<br/>Insider Risks"]:::threat --> F["🔓 Privilege Escalation<br/>Unauthorized Access"]
+    E --> G["💧 Data Leakage<br/>Sensitive Information Exposure"]
+    E --> H["🎭 Model Manipulation<br/>Model Tampering"]
     
-    I[Defense Layers]:::defense --> J[Input Validation]
-    I --> K[Access Controls]
-    I --> L[Monitoring]
-    I --> M[Audit Logging]
+    %% Defense layers with icons and descriptions
+    I["🛡️ Defense Layers<br/>Security Controls"]:::defense --> J["✅ Input Validation<br/>Sanitization, Filtering"]
+    I --> K["🔐 Access Controls<br/>Authentication, Authorization"]
+    I --> L["📊 Monitoring<br/>Real-time Detection"]
+    I --> M["📝 Audit Logging<br/>Compliance, Forensics"]
+    
+    %% Add descriptive title
+    title AI/ML Security Threat Model - Comprehensive Defense Strategy

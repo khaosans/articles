@@ -5,13 +5,13 @@
     "failures": []
   },
   "external": {
-    "passed": 7,
+    "passed": 6,
     "failed": 0,
     "failures": []
   },
   "summary": {
-    "total_links": 119,
-    "total_passed": 119,
+    "total_links": 118,
+    "total_passed": 118,
     "total_failed": 0,
     "success_rate": 100.0
   }

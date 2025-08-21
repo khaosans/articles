@@ -1,6 +1,6 @@
 {
   "total_files": 19,
-  "total_diagrams": 35,
+  "total_diagrams": 24,
   "diagrams_by_file": {
     "./README.md": 1,
     "./guides/roles/ml-engineer.md": 2,
@@ -13,7 +13,6 @@
     "./guides/implementation/cost-optimization.md": 1,
     "./guides/implementation/security-guide.md": 5,
     "./guides/implementation/mlops-architecture.md": 3,
-    "./templates/role-template.md": 1,
-    "./reports/ai-roles-workflows-comprehensive.md": 11
+    "./templates/role-template.md": 1
   }
 }
