@@ -1,8 +1,7 @@
 {
-  "total_files": 19,
-  "total_diagrams": 35,
+  "total_files": 33,
+  "total_diagrams": 33,
   "diagrams_by_file": {
-    "./README.md": 1,
     "./guides/roles/ml-engineer.md": 2,
     "./guides/roles/ai-engineer.md": 2,
     "./guides/roles/data-scientist.md": 2,
@@ -14,6 +13,6 @@
     "./guides/implementation/security-guide.md": 5,
     "./guides/implementation/mlops-architecture.md": 3,
     "./templates/role-template.md": 1,
-    "./reports/ai-roles-workflows-comprehensive.md": 11
+    "./reports/ai-roles-workflows-comprehensive.md": 10
   }
 }

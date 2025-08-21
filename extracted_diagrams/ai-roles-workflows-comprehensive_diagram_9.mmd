@@ -1,9 +1,16 @@
-radar title AI Engineer Skill Assessment
-    "Prompt Engineering" : 85
-    "RAG Systems" : 90
-    "API Development" : 80
-    "Security" : 70
-    "Cost Optimization" : 75
-    "Monitoring" : 80
-    "Testing" : 85
-    "Documentation" : 90
+stateDiagram-v2
+    [*] --> Planning
+    Planning --> Development
+    Development --> Testing
+    Testing --> Staging
+    Staging --> Production
+    Production --> Monitoring
+    Monitoring --> Maintenance
+    Maintenance --> Production
+    Production --> Retirement
+    Retirement --> [*]
+    
+    Testing --> Development : Issues Found
+    Staging --> Development : Failures
+    Production --> Development : Critical Bugs
+    Monitoring --> Development : Performance Issues

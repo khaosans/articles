@@ -1,0 +1,20 @@
+{
+  "internal": {
+    "total": 93,
+    "passed": 93,
+    "failed": 0,
+    "errors": []
+  },
+  "external": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "errors": []
+  },
+  "summary": {
+    "total_links": 99,
+    "internal_links": 93,
+    "external_links": 6,
+    "tested_external": 6
+  }
+}
