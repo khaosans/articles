@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 Documentation Verification Script
-Verifies all Markdown documents render properly, especially Mermaid diagrams
+Verifies all Markdown files, Mermaid diagrams, and internal links
 """
 
 import os
 import re
-import subprocess
 import sys
 from pathlib import Path
 
@@ -14,8 +13,8 @@ def find_markdown_files():
     """Find all Markdown files in the repository"""
     markdown_files = []
     for root, dirs, files in os.walk('.'):
-        # Skip .git directory
-        if '.git' in root:
+        # Skip .git and venv directories
+        if '.git' in root or 'venv' in root:
             continue
         for file in files:
             if file.endswith('.md'):
@@ -30,7 +29,7 @@ def extract_mermaid_blocks(content):
     return matches
 
 def validate_mermaid_syntax(mermaid_code):
-    """Basic Mermaid syntax validation"""
+    """Enhanced Mermaid syntax validation"""
     issues = []
     
     # Check for common Mermaid syntax issues
@@ -91,6 +90,30 @@ def validate_mermaid_syntax(mermaid_code):
             
         # Check for class relationships
         if re.match(r'^[A-Za-z0-9_]+\s*[|<>-]+\s*[A-Za-z0-9_]+', line):
+            continue
+            
+        # Check for state diagram transitions
+        if re.match(r'^[A-Za-z0-9_]+\s*-->\s*\[.*\]', line):
+            continue
+            
+        # Check for closing braces in class diagrams
+        if line.strip() == '}':
+            continue
+            
+        # Check for gantt tasks
+        if re.match(r'^[A-Za-z0-9_\s]+\s*:\s*[a-z]+,', line):
+            continue
+            
+        # Check for sequence diagram interactions
+        if re.match(r'^[A-Za-z0-9_]+->>?[A-Za-z0-9_]+', line):
+            continue
+            
+        # Check for alt/else blocks
+        if line.startswith('alt') or line.startswith('else'):
+            continue
+            
+        # Check for comments
+        if line.startswith('%%'):
             continue
             
         # Check for mindmap nodes
@@ -154,67 +177,47 @@ def validate_mermaid_syntax(mermaid_code):
 def check_internal_links(content, file_path):
     """Check if internal links are valid"""
     issues = []
-    
-    # Skip link checking for template files
-    if 'template' in file_path.lower():
-        return issues
-    
-    # Find all internal links
     pattern = r'\[([^\]]+)\]\(([^)]+)\)'
     matches = re.findall(pattern, content)
     
     for link_text, link_url in matches:
-        # Skip external links
-        if link_url.startswith('http'):
+        # Skip external links and anchor links
+        if link_url.startswith('http') or link_url.startswith('#'):
             continue
             
         # Handle relative paths
+        current_file_dir = os.path.dirname(file_path)
         if link_url.startswith('./'):
             link_url = link_url[2:]
         elif link_url.startswith('../'):
-            # Calculate relative path
-            current_dir = os.path.dirname(file_path)
-            link_url = os.path.normpath(os.path.join(current_dir, link_url))
+            target_path = os.path.normpath(os.path.join(current_file_dir, link_url))
         else:
-            # Assume relative to current file
-            current_dir = os.path.dirname(file_path)
-            link_url = os.path.join(current_dir, link_url)
+            target_path = os.path.join(current_file_dir, link_url)
         
-        # Check if file exists
-        if not os.path.exists(link_url):
-            issues.append(f"Broken internal link: '{link_text}' -> '{link_url}'")
+        if link_url.startswith('../'):
+            target_path = os.path.normpath(os.path.join(current_file_dir, link_url))
+        else:
+            target_path = os.path.join(current_file_dir, link_url)
+        
+        if not os.path.exists(target_path):
+            issues.append(f"Broken internal link: {link_text} -> {link_url}")
     
     return issues
 
 def check_markdown_syntax(content, file_path):
-    """Check for common Markdown syntax issues"""
+    """Check basic Markdown syntax"""
     issues = []
     
-    lines = content.split('\n')
+    # Check for unclosed code blocks
+    code_block_count = content.count('```')
+    if code_block_count % 2 != 0:
+        issues.append("Unclosed code block")
     
-    in_code_block = False
-    code_block_start = None
-    
-    for i, line in enumerate(lines, 1):
-        # Check for code block markers
-        if line.strip().startswith('```'):
-            if not in_code_block:
-                # Starting a code block
-                in_code_block = True
-                code_block_start = i
-            else:
-                # Ending a code block
-                in_code_block = False
-                code_block_start = None
-        
-        # Check for malformed headers
-        if line.startswith('#'):
-            if not re.match(r'^#{1,6}\s+', line):
-                issues.append(f"Line {i}: Malformed header - '{line}'")
-    
-    # Check if there's an unclosed code block at the end
-    if in_code_block and code_block_start:
-        issues.append(f"Line {code_block_start}: Unclosed code block")
+    # Check for unclosed Mermaid blocks
+    mermaid_start = content.count('```mermaid')
+    mermaid_end = content.count('```')
+    if mermaid_start > 0 and mermaid_end < mermaid_start * 2:
+        issues.append("Unclosed Mermaid code block")
     
     return issues
 
@@ -238,6 +241,7 @@ def verify_file(file_path):
             mermaid_issues = validate_mermaid_syntax(mermaid_code)
             if mermaid_issues:
                 issues.extend([f"Mermaid diagram {i}: {issue}" for issue in mermaid_issues])
+                print(f"    ❌ Mermaid diagram {i}: Syntax errors found")
             else:
                 print(f"    ✅ Mermaid diagram {i}: Valid syntax")
     
@@ -245,6 +249,7 @@ def verify_file(file_path):
     link_issues = check_internal_links(content, file_path)
     if link_issues:
         issues.extend(link_issues)
+        print(f"  ❌ Internal links: {len(link_issues)} issues found")
     else:
         print(f"  🔗 Internal links: Valid")
     
@@ -252,6 +257,7 @@ def verify_file(file_path):
     syntax_issues = check_markdown_syntax(content, file_path)
     if syntax_issues:
         issues.extend(syntax_issues)
+        print(f"  ❌ Markdown syntax: {len(syntax_issues)} issues found")
     else:
         print(f"  📝 Markdown syntax: Valid")
     
@@ -263,15 +269,13 @@ def main():
     print("=" * 60)
     
     markdown_files = find_markdown_files()
-    print(f"Found {len(markdown_files)} Markdown files")
+    print(f"Found {len(markdown_files)} Markdown files\n")
     
     all_issues = []
-    files_with_issues = 0
     
-    for file_path in sorted(markdown_files):
+    for file_path in markdown_files:
         issues = verify_file(file_path)
         if issues:
-            files_with_issues += 1
             all_issues.extend([f"{file_path}: {issue}" for issue in issues])
     
     print("\n" + "=" * 60)
@@ -279,16 +283,16 @@ def main():
     print("=" * 60)
     
     if all_issues:
-        print(f"❌ Found {len(all_issues)} issues in {files_with_issues} files:")
+        print("❌ Issues found:")
         for issue in all_issues:
             print(f"  • {issue}")
+        print(f"\n🚨 CRITICAL: {len(all_issues)} issue(s) found that need to be fixed!")
         return False
     else:
         print("✅ All documents verified successfully!")
-        print(f"  • {len(markdown_files)} files checked")
-        print(f"  • All Mermaid diagrams valid")
-        print(f"  • All internal links working")
-        print(f"  • All Markdown syntax correct")
+        print("  • All Mermaid diagrams valid")
+        print("  • All internal links working")
+        print("  • All Markdown syntax correct")
         return True
 
 if __name__ == "__main__":

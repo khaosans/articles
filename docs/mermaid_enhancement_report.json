@@ -1,0 +1,127 @@
+{
+  "enhanced_diagrams": [
+    "security-guide_diagram_5_enhanced.mmd",
+    "role-template_diagram_1_enhanced.mmd",
+    "security-guide_diagram_2_enhanced.mmd",
+    "data-scientist_diagram_1_enhanced.mmd",
+    "ml-engineer_diagram_2_enhanced.mmd",
+    "data-engineer_diagram_1_enhanced.mmd",
+    "README_diagram_1_enhanced.mmd",
+    "ai-developer_diagram_1_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_9_enhanced.mmd",
+    "security-guide_diagram_3_enhanced.mmd",
+    "security-guide_diagram_4_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_8_enhanced.mmd",
+    "ai-engineer_diagram_2_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_5_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_2_enhanced.mmd",
+    "mlops-architecture_diagram_2_enhanced.mmd",
+    "mlops-architecture_diagram_3_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_3_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_4_enhanced.mmd",
+    "career-pathways_diagram_1_enhanced.mmd",
+    "data-scientist_diagram_1_enhanced_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_6_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_1_enhanced.mmd",
+    "mlops-architecture_diagram_1_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_11_enhanced.mmd",
+    "performance-metrics_diagram_1_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_10_enhanced.mmd",
+    "security-guide_diagram_3_enhanced_enhanced.mmd",
+    "ml-engineer_diagram_1_enhanced.mmd",
+    "data-scientist_diagram_2_enhanced.mmd",
+    "security-guide_diagram_1_enhanced.mmd",
+    "ai-developer_diagram_2_enhanced.mmd",
+    "data-engineer_diagram_2_enhanced.mmd",
+    "cost-optimization_diagram_1_enhanced.mmd",
+    "ai-engineer_diagram_1_enhanced.mmd",
+    "ai-developer_diagram_3_enhanced.mmd"
+  ],
+  "enhancement_features": {
+    "emojis": "Added relevant emojis for better visual hierarchy",
+    "colors": "Enhanced color schemes for better contrast and readability",
+    "fonts": "Improved font sizes and weights for better legibility",
+    "formatting": "Added line breaks and better text formatting"
+  },
+  "color_schemes": {
+    "primary": {
+      "fill": "#e8f4fd",
+      "stroke": "#1976d2",
+      "color": "#0d47a1",
+      "font_size": "14px",
+      "font_weight": "bold"
+    },
+    "secondary": {
+      "fill": "#f3e5f5",
+      "stroke": "#7b1fa2",
+      "color": "#4a148c",
+      "font_size": "13px",
+      "font_weight": "bold"
+    },
+    "success": {
+      "fill": "#e8f5e8",
+      "stroke": "#388e3c",
+      "color": "#1b5e20",
+      "font_size": "13px",
+      "font_weight": "bold"
+    },
+    "warning": {
+      "fill": "#fff3e0",
+      "stroke": "#f57c00",
+      "color": "#e65100",
+      "font_size": "13px",
+      "font_weight": "bold"
+    },
+    "danger": {
+      "fill": "#ffebee",
+      "stroke": "#c62828",
+      "color": "#b71c1c",
+      "font_size": "13px",
+      "font_weight": "bold"
+    },
+    "info": {
+      "fill": "#e0f2f1",
+      "stroke": "#00695c",
+      "color": "#004d40",
+      "font_size": "13px",
+      "font_weight": "bold"
+    },
+    "light": {
+      "fill": "#fff8e1",
+      "stroke": "#fbc02d",
+      "color": "#f57f17",
+      "font_size": "13px",
+      "font_weight": "bold"
+    }
+  },
+  "emoji_mappings": {
+    "start": "🚀",
+    "end": "🏁",
+    "decision": "❓",
+    "process": "⚙️",
+    "data": "📊",
+    "ai": "🤖",
+    "ml": "🧠",
+    "security": "🔒",
+    "cost": "💰",
+    "performance": "⚡",
+    "quality": "💎",
+    "analysis": "🔍",
+    "development": "🛠️",
+    "testing": "🧪",
+    "deployment": "🚀",
+    "monitoring": "📈",
+    "business": "💼",
+    "technical": "🔧",
+    "user": "👤",
+    "system": "🖥️",
+    "network": "🌐",
+    "database": "🗄️",
+    "api": "🔌",
+    "model": "🎯",
+    "training": "🏋️",
+    "evaluation": "📊",
+    "communication": "📢",
+    "impact": "💼"
+  }
+}

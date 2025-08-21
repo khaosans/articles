@@ -1,0 +1,39 @@
+{
+  "cleanup_date": "/Users/Sour/Documents/articles",
+  "removed_files": [
+    "debug_detailed.py",
+    "debug_mermaid.py",
+    "test_clean_diagram.html",
+    "test_single_diagram.html",
+    "test_mermaid_rendering.py",
+    "test_with_mcp.py",
+    "test_mcp_mermaid.py",
+    "test_links.py",
+    "run_all_tests.py",
+    "preview_diagrams.html",
+    "link_test_results.json",
+    "mcp_mermaid_test_results.json",
+    "TESTING_SUMMARY.md",
+    ".DS_Store",
+    "__pycache__",
+    ".playwright-mcp"
+  ],
+  "removed_count": 16,
+  "repository_structure": {
+    "tools": "Utility scripts for diagram processing and verification",
+    "docs": "Documentation and reports",
+    "extracted_diagrams": "Original and enhanced Mermaid diagrams",
+    "guides": "AI/ML role guides and templates",
+    "reports": "Generated reports and documentation",
+    "templates": "Template files for roles and checklists"
+  },
+  "kept_files": {
+    "README.md": "Main project documentation",
+    "requirements.txt": "Python dependencies",
+    ".gitignore": "Git ignore rules",
+    "extracted_diagrams/": "All Mermaid diagrams (original + enhanced)",
+    "guides/": "AI/ML role guides",
+    "reports/": "Generated reports",
+    "templates/": "Template files"
+  }
+}
