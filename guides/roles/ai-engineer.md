@@ -31,38 +31,198 @@ The term "AI Engineer" became widely recognized around 2018, as companies began 
 ## Visual: AI Engineer Workflow Overview
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '14px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
 flowchart TD
-    A[Data Ingestion & Preprocessing] --> B[Model Integration]
-    B --> C[Deployment & Infrastructure]
-    C --> D[Monitoring & Retraining]
-    D --> E[Ethics & Governance]
-    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
-    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
-    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
-    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
-    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    A["Data Ingestion & Preprocessing"] --> B["Model Integration"]
+    B --> C["Deployment & Infrastructure"]
+    C --> D["Monitoring & Retraining"]
+    D --> E["Ethics & Governance"]
+    
+    A1["Apache Spark<br/>AWS Glue<br/>Data Validation"] --> A
+    B1["TensorFlow/PyTorch<br/>REST/gRPC APIs<br/>Enterprise Integration"] --> B
+    C1["Docker/Kubernetes<br/>AWS SageMaker<br/>Azure ML"] --> C
+    D1["MLflow/Seldon Core<br/>Performance Monitoring<br/>Drift Detection"] --> D
+    E1["Fairness Constraints<br/>Audit Trails<br/>GDPR/CCPA Compliance"] --> E
+    
+    style A fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style B fill:#7c3aed,stroke:#5b21b6,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style C fill:#059669,stroke:#047857,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style D fill:#ea580c,stroke:#c2410c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style E fill:#dc2626,stroke:#b91c1c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
 ```
 
-*This workflow diagram narrates the sequential, interconnected responsibilities of an AI Engineer, from preparing data to ensuring ethical and compliant AI systems in production.*
+*Figure 1: AI Engineer workflow showing the sequential progression from data preparation to ethical governance, with supporting tools and technologies for each phase.*
 
 ---
 
-## Visual: AI Engineer Core Responsibilities Map
+## Visual: AI Engineer Skill Requirements
 
 ```mermaid
-flowchart LR
-    A[Data Engineering] --> B[Model Integration]
-    B --> C[Deployment & Infrastructure]
-    C --> D[Monitoring & Retraining]
-    D --> E[Ethics & Governance]
-    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
-    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
-    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
-    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
-    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+mindmap
+  root((AI Engineer Skills))
+    Technical Skills
+      Programming Languages
+        Python
+        Java
+        C++
+      ML Frameworks
+        TensorFlow
+        PyTorch
+        Scikit-learn
+      Cloud Platforms
+        AWS SageMaker
+        Azure ML
+        Google Vertex AI
+      MLOps Tools
+        Kubeflow
+        MLflow
+        TFX
+        Airflow
+        Terraform
+    Soft Skills
+      Communication
+        Technical Translation
+        Stakeholder Management
+        Documentation
+      Collaboration
+        Cross-functional Teams
+        Agile Methodologies
+        Code Reviews
+      Ethics
+        Bias Detection
+        Explainability
+        Compliance
+        Fairness
 ```
 
-*This map visualizes the core responsibilities of AI Engineers, emphasizing the progression from foundational data engineering to advanced deployment, monitoring, and ethical governance in enterprise AI systems.*
+*Figure 2: Comprehensive skill requirements for AI Engineers, organized by technical and soft skills categories.*
+
+---
+
+## Visual: AI Engineer Career Progression
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+flowchart TD
+    A["Junior AI Engineer<br/>$80K - $120K"] --> B["AI Engineer<br/>$120K - $160K"]
+    B --> C["Senior AI Engineer<br/>$160K - $200K"]
+    C --> D["Lead AI Engineer<br/>$200K - $250K"]
+    D --> E["AI Engineering Manager<br/>$250K+"]
+    
+    A1["Model Integration<br/>Basic MLOps<br/>API Development"] --> A
+    B1["Production Systems<br/>Infrastructure Design<br/>Team Collaboration"] --> B
+    C1["Architecture Design<br/>Mentoring<br/>Strategic Planning"] --> C
+    D1["Team Leadership<br/>Technical Strategy<br/>Cross-functional Coordination"] --> D
+    E1["Organizational Leadership<br/>Business Strategy<br/>Innovation Management"] --> E
+    
+    style A fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#ffffff,font-weight:bold
+    style B fill:#7c3aed,stroke:#5b21b6,stroke-width:2px,color:#ffffff,font-weight:bold
+    style C fill:#059669,stroke:#047857,stroke-width:2px,color:#ffffff,font-weight:bold
+    style D fill:#ea580c,stroke:#c2410c,stroke-width:2px,color:#ffffff,font-weight:bold
+    style E fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#ffffff,font-weight:bold
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+```
+
+*Figure 3: Career progression path for AI Engineers showing salary ranges and key responsibilities at each level.*
+
+---
+
+## Visual: AI Engineer Technology Stack
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '12px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+graph TB
+    subgraph "Data Layer"
+        A1["Apache Spark"]
+        A2["AWS Glue"]
+        A3["Apache Kafka"]
+        A4["Great Expectations"]
+    end
+    
+    subgraph "ML Frameworks"
+        B1["TensorFlow"]
+        B2["PyTorch"]
+        B3["Scikit-learn"]
+        B4["Hugging Face"]
+    end
+    
+    subgraph "Infrastructure"
+        C1["Docker"]
+        C2["Kubernetes"]
+        C3["AWS SageMaker"]
+        C4["Azure ML"]
+    end
+    
+    subgraph "MLOps Tools"
+        D1["MLflow"]
+        D2["Kubeflow"]
+        D3["TFX"]
+        D4["Airflow"]
+    end
+    
+    subgraph "Monitoring"
+        E1["Prometheus"]
+        E2["Grafana"]
+        E3["Seldon Core"]
+        E4["Evidently AI"]
+    end
+    
+    A1 --> B1
+    A2 --> B2
+    A3 --> B3
+    A4 --> B4
+    B1 --> C1
+    B2 --> C2
+    B3 --> C3
+    B4 --> C4
+    C1 --> D1
+    C2 --> D2
+    C3 --> D3
+    C4 --> D4
+    D1 --> E1
+    D2 --> E2
+    D3 --> E3
+    D4 --> E4
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style A2 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style A3 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style A4 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style B2 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style B3 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style B4 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style C2 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style C3 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style C4 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style D2 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style D3 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style D4 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style E2 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style E3 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style E4 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+```
+
+*Figure 4: Technology stack for AI Engineers showing the layered architecture from data processing to monitoring and observability.*
 
 ---
 

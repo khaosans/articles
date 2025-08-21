@@ -34,27 +34,119 @@ This guide provides a comprehensive framework for designing and implementing MLO
 
 ---
 
+## Visual: MLOps Architecture Overview
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '14px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+graph TB
+    subgraph "Data Layer"
+        A1["Raw Data Sources"]
+        A2["Data Ingestion"]
+        A3["Data Validation"]
+        A4["Data Processing"]
+        A5["Feature Engineering"]
+        A6["Feature Store"]
+    end
+    
+    subgraph "ML Development Layer"
+        B1["Experiment Tracking"]
+        B2["Model Training"]
+        B3["Model Validation"]
+        B4["Model Registry"]
+        B5["Model Serving"]
+    end
+    
+    subgraph "Infrastructure Layer"
+        C1["Container Orchestration"]
+        C2["Service Mesh"]
+        C3["Load Balancer"]
+        C4["Model Servers"]
+        C5["Monitoring"]
+    end
+    
+    subgraph "Operations Layer"
+        D1["CI/CD Pipeline"]
+        D2["Deployment Management"]
+        D3["Performance Monitoring"]
+        D4["Alerting & Logging"]
+        D5["Governance & Compliance"]
+    end
+    
+    A1 --> A2 --> A3 --> A4 --> A5 --> A6
+    A6 --> B1 --> B2 --> B3 --> B4 --> B5
+    B5 --> C1 --> C2 --> C3 --> C4 --> C5
+    C5 --> D1 --> D2 --> D3 --> D4 --> D5
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A2 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A3 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A4 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A5 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A6 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    style B2 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    style B3 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    style B4 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    style B5 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    style C2 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    style C3 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    style C4 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    style C5 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+    style D2 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+    style D3 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+    style D4 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+    style D5 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+```
+
+*Figure 1: Complete MLOps architecture showing the four main layers and their interconnections.*
+
+---
+
 ## Core Architecture Components
 
 ### **1. Data Pipeline Layer**
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
 flowchart TD
-    A[Raw Data Sources] --> B[Data Ingestion]
-    B --> C[Data Validation]
-    C --> D[Data Processing]
-    D --> E[Feature Engineering]
-    E --> F[Feature Store]
-    F --> G[Model Training]
+    A["Raw Data Sources<br/>Databases, APIs, Streams"] --> B["Data Ingestion<br/>Kafka, Kinesis, Pub/Sub"]
+    B --> C["Data Validation<br/>Great Expectations, Deequ"]
+    C --> D["Data Processing<br/>Spark, Beam, Dask"]
+    D --> E["Feature Engineering<br/>Feast, Tecton, Hopsworks"]
+    E --> F["Feature Store<br/>Redis, DynamoDB, Vector DBs"]
+    F --> G["Model Training<br/>Distributed Training"]
     
-    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
-    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
-    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
-    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
-    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
-    style F fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
-    style G fill:#0097a7,stroke:#00695c,stroke-width:2px,color:#ffffff
+    A1["Data Quality<br/>Schema Validation<br/>Anomaly Detection"] --> A
+    B1["Real-time Streaming<br/>Batch Processing<br/>Data Lake"] --> B
+    C1["Statistical Validation<br/>Business Rules<br/>Data Lineage"] --> C
+    D1["ETL Pipelines<br/>Data Transformation<br/>Aggregation"] --> D
+    E1["Feature Selection<br/>Feature Scaling<br/>Feature Monitoring"] --> E
+    F1["Online Serving<br/>Offline Storage<br/>Feature Versioning"] --> F
+    G1["Hyperparameter Tuning<br/>Cross-validation<br/>Model Selection"] --> G
+    
+    style A fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style B fill:#7c3aed,stroke:#5b21b6,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style C fill:#059669,stroke:#047857,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style D fill:#ea580c,stroke:#c2410c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style E fill:#dc2626,stroke:#b91c1c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style F fill:#0891b2,stroke:#0e7490,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style G fill:#7c2d12,stroke:#92400e,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style F1 fill:#cffafe,stroke:#06b6d4,stroke-width:1px,color:#164e63,font-weight:bold
+    style G1 fill:#fef3c7,stroke:#f59e0b,stroke-width:1px,color:#92400e,font-weight:bold
 ```
+
+*Figure 2: Data pipeline layer showing the complete flow from raw data to model training with supporting tools and technologies.*
 
 **Key Components:**
 - **Data Ingestion**: Apache Kafka, AWS Kinesis, Google Pub/Sub
@@ -66,18 +158,33 @@ flowchart TD
 ### **2. Model Development Layer**
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
 flowchart LR
-    A[Experiment Tracking] --> B[Model Training]
-    B --> C[Model Validation]
-    C --> D[Model Registry]
-    D --> E[Model Serving]
+    A["Experiment Tracking<br/>MLflow, W&B, Neptune"] --> B["Model Training<br/>Distributed Training"]
+    B --> C["Model Validation<br/>A/B Testing, Statistical Validation"]
+    C --> D["Model Registry<br/>MLflow Registry, SageMaker"]
+    D --> E["Model Serving<br/>TensorFlow Serving, TorchServe"]
     
-    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
-    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
-    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
-    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
-    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    A1["Hyperparameter Tuning<br/>Experiment Management<br/>Reproducibility"] --> A
+    B1["Distributed Training<br/>GPU/TPU Utilization<br/>Training Orchestration"] --> B
+    C1["Performance Metrics<br/>Business Validation<br/>Statistical Tests"] --> C
+    D1["Model Versioning<br/>Model Lineage<br/>Deployment Tracking"] --> D
+    E1["API Development<br/>Load Balancing<br/>Scaling Strategies"] --> E
+    
+    style A fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style B fill:#7c3aed,stroke:#5b21b6,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style C fill:#059669,stroke:#047857,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style D fill:#ea580c,stroke:#c2410c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style E fill:#dc2626,stroke:#b91c1c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
 ```
+
+*Figure 3: Model development layer showing the complete ML workflow from experimentation to deployment.*
 
 **Key Components:**
 - **Experiment Tracking**: MLflow, Weights & Biases, Neptune
@@ -89,277 +196,195 @@ flowchart LR
 ### **3. Infrastructure Layer**
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
 flowchart TD
-    A[Container Orchestration] --> B[Service Mesh]
-    B --> C[Load Balancer]
-    C --> D[Model Servers]
-    D --> E[Monitoring]
+    A["Container Orchestration<br/>Kubernetes, Docker Swarm"] --> B["Service Mesh<br/>Istio, Linkerd"]
+    B --> C["Load Balancer<br/>NGINX, HAProxy, Cloud LB"]
+    C --> D["Model Servers<br/>TensorFlow Serving, TorchServe"]
+    D --> E["Monitoring<br/>Prometheus, Grafana, Jaeger"]
     
-    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
-    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
-    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
-    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
-    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    A1["Pod Management<br/>Resource Allocation<br/>Scaling Policies"] --> A
+    B1["Service Discovery<br/>Traffic Management<br/>Security Policies"] --> B
+    C1["Traffic Distribution<br/>Health Checks<br/>Failover"] --> C
+    D1["Model Loading<br/>Inference Optimization<br/>Batch Processing"] --> D
+    E1["Metrics Collection<br/>Performance Monitoring<br/>Distributed Tracing"] --> E
+    
+    style A fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style B fill:#7c3aed,stroke:#5b21b6,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style C fill:#059669,stroke:#047857,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style D fill:#ea580c,stroke:#c2410c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    style E fill:#dc2626,stroke:#b91c1c,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
 ```
 
-**Key Components:**
-- **Container Orchestration**: Kubernetes, Docker Swarm, AWS ECS
-- **Service Mesh**: Istio, Linkerd, Consul
-- **Load Balancing**: NGINX, HAProxy, cloud load balancers
-- **Model Servers**: Custom inference servers, managed services
-- **Monitoring**: Prometheus, Grafana, custom dashboards
+*Figure 4: Infrastructure layer showing the deployment and serving architecture with supporting components.*
 
 ---
 
-## Implementation Patterns
+## Visual: MLOps Workflow Patterns
 
-### **Pattern 1: Batch Training Pipeline**
-
-```yaml
-# Example Airflow DAG for batch training
-dag:
-  schedule_interval: "0 2 * * *"  # Daily at 2 AM
-  
-stages:
-  - name: data_validation
-    task: validate_data_quality
-    timeout: 3600
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '13px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+flowchart TD
+    subgraph "Development Phase"
+        A1["Code Development"]
+        A2["Data Preparation"]
+        A3["Experiment Tracking"]
+        A4["Model Training"]
+    end
     
-  - name: feature_engineering
-    task: compute_features
-    timeout: 7200
+    subgraph "Testing Phase"
+        B1["Unit Testing"]
+        B2["Integration Testing"]
+        B3["Model Validation"]
+        B4["Performance Testing"]
+    end
     
-  - name: model_training
-    task: train_model
-    timeout: 14400
+    subgraph "Deployment Phase"
+        C1["Model Packaging"]
+        C2["Deployment Pipeline"]
+        C3["Canary Deployment"]
+        C4["Production Rollout"]
+    end
     
-  - name: model_evaluation
-    task: evaluate_model
-    timeout: 1800
+    subgraph "Operations Phase"
+        D1["Monitoring"]
+        D2["Performance Tracking"]
+        D3["Model Retraining"]
+        D4["Rollback Management"]
+    end
     
-  - name: model_deployment
-    task: deploy_model
-    timeout: 900
+    A1 --> A2 --> A3 --> A4
+    A4 --> B1 --> B2 --> B3 --> B4
+    B4 --> C1 --> C2 --> C3 --> C4
+    C4 --> D1 --> D2 --> D3 --> D4
+    D3 --> A1
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A2 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A3 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    style A4 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a,font-weight:bold
+    
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    style B2 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    style B3 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    style B4 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95,font-weight:bold
+    
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    style C2 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    style C3 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    style C4 fill:#d1fae5,stroke:#10b981,stroke-width:2px,color:#065f46,font-weight:bold
+    
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+    style D2 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+    style D3 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
+    style D4 fill:#fed7aa,stroke:#f97316,stroke-width:2px,color:#9a3412,font-weight:bold
 ```
 
-### **Pattern 2: Real-Time Inference Pipeline**
-
-```python
-# Example FastAPI model serving
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import mlflow
-import numpy as np
-
-app = FastAPI()
-
-class PredictionRequest(BaseModel):
-    features: list[float]
-
-class PredictionResponse(BaseModel):
-    prediction: float
-    confidence: float
-    model_version: str
-
-@app.post("/predict", response_model=PredictionResponse)
-async def predict(request: PredictionRequest):
-    try:
-        # Load model from registry
-        model = mlflow.pyfunc.load_model("models:/fraud-detection/Production")
-        
-        # Make prediction
-        features = np.array(request.features).reshape(1, -1)
-        prediction = model.predict(features)[0]
-        
-        return PredictionResponse(
-            prediction=float(prediction),
-            confidence=0.95,
-            model_version="v1.2.3"
-        )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-```
-
-### **Pattern 3: A/B Testing Framework**
-
-```python
-# Example A/B testing implementation
-class ABTestManager:
-    def __init__(self):
-        self.experiments = {}
-    
-    def create_experiment(self, name, variants, traffic_split):
-        self.experiments[name] = {
-            'variants': variants,
-            'traffic_split': traffic_split,
-            'metrics': {}
-        }
-    
-    def get_variant(self, user_id, experiment_name):
-        if experiment_name not in self.experiments:
-            return 'control'
-        
-        # Deterministic assignment based on user_id
-        hash_value = hash(user_id) % 100
-        cumulative = 0
-        
-        for variant, percentage in self.experiments[experiment_name]['traffic_split'].items():
-            cumulative += percentage
-            if hash_value < cumulative:
-                return variant
-        
-        return 'control'
-```
+*Figure 5: MLOps workflow patterns showing the continuous cycle from development to operations with feedback loops.*
 
 ---
 
-## Monitoring & Observability
+## Visual: MLOps Technology Stack
 
-### **1. Model Performance Monitoring**
-
-```python
-# Example monitoring implementation
-class ModelMonitor:
-    def __init__(self):
-        self.metrics = {}
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '12px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+graph TB
+    subgraph "Data & Feature Management"
+        A1["Apache Kafka"]
+        A2["Apache Spark"]
+        A3["Great Expectations"]
+        A4["Feast Feature Store"]
+        A5["Apache Airflow"]
+    end
     
-    def log_prediction(self, model_id, features, prediction, actual=None):
-        # Log prediction metrics
-        self.metrics.setdefault(model_id, []).append({
-            'timestamp': time.time(),
-            'features': features,
-            'prediction': prediction,
-            'actual': actual
-        })
+    subgraph "ML Development"
+        B1["MLflow"]
+        B2["Weights & Biases"]
+        B3["Kubeflow"]
+        B4["TensorFlow/PyTorch"]
+        B5["SageMaker"]
+    end
     
-    def detect_drift(self, model_id, window_size=1000):
-        recent_predictions = self.metrics[model_id][-window_size:]
-        
-        # Calculate statistical drift
-        feature_means = np.mean([p['features'] for p in recent_predictions], axis=0)
-        baseline_means = self.get_baseline_means(model_id)
-        
-        drift_score = np.mean(np.abs(feature_means - baseline_means))
-        return drift_score > 0.1  # Threshold for drift detection
+    subgraph "Infrastructure"
+        C1["Kubernetes"]
+        C2["Docker"]
+        C3["Istio Service Mesh"]
+        C4["Prometheus"]
+        C5["Grafana"]
+    end
+    
+    subgraph "Model Serving"
+        D1["TensorFlow Serving"]
+        D2["TorchServe"]
+        D3["Seldon Core"]
+        D4["BentoML"]
+        D5["Ray Serve"]
+    end
+    
+    subgraph "Monitoring & Observability"
+        E1["Evidently AI"]
+        E2["Arize AI"]
+        E3["Fiddler AI"]
+        E4["Model Registry"]
+        E5["MLflow Tracking"]
+    end
+    
+    A1 --> B1
+    A2 --> B2
+    A3 --> B3
+    A4 --> B4
+    A5 --> B5
+    B1 --> C1
+    B2 --> C2
+    B3 --> C3
+    B4 --> C4
+    B5 --> C5
+    C1 --> D1
+    C2 --> D2
+    C3 --> D3
+    C4 --> D4
+    C5 --> D5
+    D1 --> E1
+    D2 --> E2
+    D3 --> E3
+    D4 --> E4
+    D5 --> E5
+    
+    style A1 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style A2 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style A3 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style A4 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    style A5 fill:#dbeafe,stroke:#3b82f6,stroke-width:1px,color:#1e3a8a,font-weight:bold
+    
+    style B1 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style B2 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style B3 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style B4 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    style B5 fill:#e9d5ff,stroke:#8b5cf6,stroke-width:1px,color:#4c1d95,font-weight:bold
+    
+    style C1 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style C2 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style C3 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style C4 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    style C5 fill:#d1fae5,stroke:#10b981,stroke-width:1px,color:#065f46,font-weight:bold
+    
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style D2 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style D3 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style D4 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    style D5 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#9a3412,font-weight:bold
+    
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style E2 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style E3 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style E4 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
+    style E5 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#991b1b,font-weight:bold
 ```
 
-### **2. Business Metrics Tracking**
-
-```python
-# Example business metrics implementation
-class BusinessMetricsTracker:
-    def __init__(self):
-        self.metrics = defaultdict(list)
-    
-    def track_conversion(self, user_id, prediction, actual_conversion):
-        revenue = actual_conversion * 100  # Example: $100 per conversion
-        
-        self.metrics['conversion_rate'].append(actual_conversion)
-        self.metrics['revenue'].append(revenue)
-        self.metrics['prediction_accuracy'].append(
-            1 if (prediction > 0.5) == actual_conversion else 0
-        )
-    
-    def get_roi(self, model_id):
-        total_revenue = sum(self.metrics['revenue'])
-        total_cost = len(self.metrics['revenue']) * 0.01  # Cost per prediction
-        
-        return (total_revenue - total_cost) / total_cost
-```
-
----
-
-## Security & Compliance
-
-### **1. Data Security**
-
-```python
-# Example data encryption and access control
-import hashlib
-from cryptography.fernet import Fernet
-
-class SecureDataHandler:
-    def __init__(self, encryption_key):
-        self.cipher = Fernet(encryption_key)
-    
-    def encrypt_features(self, features):
-        features_str = json.dumps(features)
-        return self.cipher.encrypt(features_str.encode())
-    
-    def decrypt_features(self, encrypted_features):
-        decrypted = self.cipher.decrypt(encrypted_features)
-        return json.loads(decrypted.decode())
-    
-    def hash_user_id(self, user_id):
-        return hashlib.sha256(user_id.encode()).hexdigest()
-```
-
-### **2. Model Security**
-
-```python
-# Example model security measures
-class SecureModelServer:
-    def __init__(self, model_path, encryption_key):
-        self.model = self.load_encrypted_model(model_path, encryption_key)
-        self.rate_limiter = RateLimiter(max_requests=1000, window=60)
-    
-    def predict(self, features, user_id):
-        # Rate limiting
-        if not self.rate_limiter.allow_request(user_id):
-            raise HTTPException(status_code=429, detail="Rate limit exceeded")
-        
-        # Input validation
-        if not self.validate_features(features):
-            raise HTTPException(status_code=400, detail="Invalid features")
-        
-        # Make prediction
-        prediction = self.model.predict(features)
-        
-        # Log for audit
-        self.audit_log.log_prediction(user_id, features, prediction)
-        
-        return prediction
-```
-
----
-
-## Deployment Strategies
-
-### **1. Blue-Green Deployment**
-
-```yaml
-# Example Kubernetes blue-green deployment
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: ml-model-blue
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: ml-model
-      version: blue
-  template:
-    metadata:
-      labels:
-        app: ml-model
-        version: blue
-    spec:
-      containers:
-      - name: ml-model
-        image: ml-model:v1.2.3
-        ports:
-        - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: ml-model-service
-spec:
-  selector:
-    app: ml-model
-    version: blue  # Switch to green for new version
-  ports:
-  - port: 80
-    targetPort: 8080
-```
+*Figure 6: Comprehensive MLOps technology stack showing tools and platforms across all layers of the architecture.*
