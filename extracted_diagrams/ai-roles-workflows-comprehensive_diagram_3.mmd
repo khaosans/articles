@@ -1,0 +1,29 @@
+sequenceDiagram
+    participant U as User
+    participant API as API Gateway
+    participant AUTH as Auth Service
+    participant RAG as RAG Engine
+    participant VDB as Vector DB
+    participant LLM as LLM Service
+    participant CACHE as Cache
+    participant MON as Monitor
+    
+    U->>API: Submit Query
+    API->>AUTH: Validate Token
+    AUTH-->>API: Token Valid
+    API->>RAG: Process Query
+    
+    RAG->>VDB: Search Embeddings
+    VDB-->>RAG: Top-k Results
+    RAG->>CACHE: Check Cache
+    alt Cache Hit
+        CACHE-->>RAG: Cached Response
+    else Cache Miss
+        RAG->>LLM: Generate Response
+        LLM-->>RAG: Response + Sources
+        RAG->>CACHE: Store Response
+    end
+    
+    RAG->>MON: Log Metrics
+    RAG-->>API: Response + Citations
+    API-->>U: Final Response

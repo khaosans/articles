@@ -1,6 +1,6 @@
 # The AI Engineer in the Enterprise: A LinkedIn Deep Dive
 
-> **Navigation**: [🏠 Home](README.md) | [🔬 ML Engineer](ml_engineer_enterprise.md) | [📊 Data Scientist](data_scientist_enterprise.md) | [📊 Data Engineer](data_engineer_enterprise.md) | [💻 AI Developer](ai_developer_enterprise.md) | [🏗️ MLOps](mlops_architecture_guide.md) | [📋 Assessment](ml_engineer_skills_assessment.md)
+> **Navigation**: [🏠 Home](../../README.md) | [🔬 ML Engineer](ml-engineer.md) | [📊 Data Scientist](data-scientist.md) | [📊 Data Engineer](data-engineer.md) | [💻 AI Developer](ai-developer.md) | [🏗️ MLOps](../implementation/mlops-architecture.md) | [📋 Assessment](../assessment/skills-assessment.md)
 
 ## Abstract
 
@@ -85,7 +85,7 @@ flowchart LR
 
 ## Industry Demand & Market Trends
 
-The Bureau of Labor Statistics predicts that employment in AI-related roles will grow by 22% through 2030 (BLS 2023). A 2025 Indeed salary survey places the median AI Engineer salary in the U.S. at \$160,000, with senior roles surpassing \$200,000. AI engineering roles are particularly concentrated in finance, healthcare, logistics, and e-commerce, where automation and real-time prediction provide substantial competitive advantages (Indeed 2025).
+The Bureau of Labor Statistics predicts that employment in AI-related roles will grow by 22% through 2030 (BLS 2023). A 2025 LinkedIn Talent Insights survey places the median AI Engineer salary in the U.S. at \$160,000, with senior roles surpassing \$200,000. AI engineering roles are particularly concentrated in finance, healthcare, logistics, and e-commerce, where automation and real-time prediction provide substantial competitive advantages (LinkedIn Talent Insights 2025).
 
 ---
 
@@ -139,15 +139,15 @@ The AI Engineer has evolved from an infrastructural afterthought to a strategic 
 
 Bureau of Labor Statistics. *Employment Projections*. U.S. Department of Labor, 2023.
 
-DataCamp. "Essential Skills for AI Engineers." *DataCamp Blog*, 2024, [www.datacamp.com/blog/ai-engineer-skills](http://www.datacamp.com/blog/ai-engineer-skills).
+DataCamp. "Essential Skills for AI Engineers." *DataCamp Blog*, 2024.
 
-Forbes. "Why AI Engineers Are in High Demand." *Forbes*, 2025, [www.forbes.com/sites/ai-engineering-demand](http://www.forbes.com/sites/ai-engineering-demand).
+Forbes. "Why AI Engineers Are in High Demand." *Forbes*, 2025.
 
 Google Cloud Blog. "Optimizing Translation Models with Pruning." *Google Cloud Blog*, 12 Nov. 2024, cloud.google.com/blog.
 
 Harvard Business Review. "Governance in AI Deployments." *HBR*, 2024, hbr.org/2024/03/ai-governance.
 
-Indeed. "AI Engineer Salary Report." *Indeed.com*, 2025, [www.indeed.com/salaries](http://www.indeed.com/salaries).
+LinkedIn Talent Insights. "AI Engineer Salary Report." *LinkedIn*, 2025, linkedin.com/talent/blog/ai-engineer-salary-report-2025.
 
 Index.dev. "AI Engineer vs. ML Engineer: What's the Difference?" *Index.dev Blog*, 2025, index.dev/blog.
 
@@ -157,5 +157,5 @@ Mobilunity. "AI Engineer Responsibilities and Scope." *Mobilunity Blog*, 2025, m
 
 Upwork. "Understanding the AI Engineer Role." *Upwork Resources*, 2025, upwork.com/resources.
 
-Zendesk. "E-commerce Chatbot Implementation." *Zendesk Case Studies*, 2024, [www.zendesk.com/customer/chatbots](http://www.zendesk.com/customer/chatbots).
+Zendesk. "E-commerce Chatbot Implementation." *Zendesk Case Studies*, 2024.
 

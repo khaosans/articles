@@ -1,0 +1,15 @@
+flowchart TD
+    A[Raw Data Sources] --> B[Data Ingestion]
+    B --> C[Data Validation]
+    C --> D[Data Processing]
+    D --> E[Feature Engineering]
+    E --> F[Feature Store]
+    F --> G[Model Training]
+    
+    style A fill:#1976d2,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style B fill:#7b1fa2,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style C fill:#388e3c,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    style D fill:#f57c00,stroke:#ef6c00,stroke-width:2px,color:#ffffff
+    style E fill:#c2185b,stroke:#ad1457,stroke-width:2px,color:#ffffff
+    style F fill:#689f38,stroke:#558b2f,stroke-width:2px,color:#ffffff
+    style G fill:#0097a7,stroke:#00695c,stroke-width:2px,color:#ffffff

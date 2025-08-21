@@ -1,0 +1,44 @@
+classDiagram
+    class AI_Team {
+        +String team_name
+        +int team_size
+        +String project_phase
+        +List~Role~ roles
+        +add_member(Role)
+        +remove_member(Role)
+    }
+    
+    class Role {
+        <<abstract>>
+        +String title
+        +String level
+        +List~Skill~ skills
+        +List~Responsibility~ responsibilities
+        +get_salary_range()
+    }
+    
+    class AI_Engineer {
+        +String specialization
+        +List~Model~ deployed_models
+        +optimize_performance()
+        +deploy_model()
+    }
+    
+    class ML_Engineer {
+        +String ml_framework
+        +List~Pipeline~ pipelines
+        +train_model()
+        +evaluate_model()
+    }
+    
+    class Data_Engineer {
+        +String data_stack
+        +List~Pipeline~ etl_pipelines
+        +build_pipeline()
+        +maintain_data_quality()
+    }
+    
+    AI_Team ||--o{ Role : contains
+    Role <|-- AI_Engineer
+    Role <|-- ML_Engineer
+    Role <|-- Data_Engineer

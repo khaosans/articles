@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> Planning
+    Planning --> Development
+    Development --> Testing
+    Testing --> Staging
+    Staging --> Production
+    Production --> Monitoring
+    Monitoring --> Maintenance
+    Maintenance --> Production
+    Production --> Retirement
+    Retirement --> [*]
+    
+    Testing --> Development : Issues Found
+    Staging --> Development : Failures
+    Production --> Development : Critical Bugs
+    Monitoring --> Development : Performance Issues

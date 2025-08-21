@@ -1,0 +1,118 @@
+name: Documentation Verification
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  verify-docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        sudo apt-get update && sudo apt-get install -y jq
+        
+    - name: Verify Python scripts
+      run: |
+        echo "🔍 Checking Python script syntax..."
+        python -m py_compile verify_docs.py extract_mermaid.py test_links.py generate_report.py
+        echo "✅ All Python scripts have valid syntax"
+        
+    - name: Run core verification
+      run: |
+        echo "🚀 Running documentation verification..."
+        python verify_docs.py
+        echo "📊 Extracting Mermaid diagrams..."
+        python extract_mermaid.py
+        echo "🔗 Testing links..."
+        python test_links.py
+        
+    - name: Verify results
+      run: |
+        echo "📊 Checking verification results..."
+        
+        # Check Mermaid diagrams
+        if [ -d "extracted_diagrams" ] && [ -f "extracted_diagrams/summary.json" ]; then
+          echo "📊 Found $(jq '.total_diagrams' extracted_diagrams/summary.json) Mermaid diagrams"
+          echo "✅ Mermaid diagram extraction successful"
+        else
+          echo "❌ No Mermaid diagrams found or extraction failed"
+          exit 1
+        fi
+        
+        # Check link testing results (only fail on internal link failures)
+        if [ -f "link_test_results.json" ]; then
+          internal_failed=$(jq '.internal.failed' link_test_results.json)
+          external_failed=$(jq '.external.failed' link_test_results.json)
+          
+          if [ "$internal_failed" -eq 0 ]; then
+            echo "✅ All internal links working"
+            if [ "$external_failed" -gt 0 ]; then
+              echo "⚠️  Found $external_failed external link failures (warnings only)"
+            fi
+          else
+            echo "❌ Found $internal_failed internal link failures (CRITICAL)"
+            exit 1
+          fi
+        else
+          echo "❌ Link test results not found"
+          exit 1
+        fi
+        
+    - name: Generate verification report
+      run: |
+        python generate_report.py > verification_summary.md
+        echo "📋 Verification report generated"
+        
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: verification-results
+        path: |
+          extracted_diagrams/
+          link_test_results.json
+          verification_summary.md
+        retention-days: 7
+        
+    - name: Comment PR with results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          try {
+            if (fs.existsSync('verification_summary.md')) {
+              const report = fs.readFileSync('verification_summary.md', 'utf8');
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## 📋 Documentation Verification Report\n\n${report}`
+              });
+              console.log('✅ Successfully commented on PR');
+            } else {
+              console.log('⚠️  No verification summary found to comment');
+            }
+          } catch (error) {
+            console.log('⚠️  Could not comment on PR:', error.message);
+            console.log('   This is not critical - verification results are available in artifacts');
+          }
