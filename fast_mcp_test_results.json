@@ -4,22 +4,32 @@
   "failed": 38,
   "errors": [
     {
-      "file": "ai-developer_diagram_1_enhanced.mmd",
+      "file": "ai-roles-workflows-comprehensive_diagram_1_enhanced.mmd",
+      "error": "Undefined class reference: ceo",
+      "type": "rendering_error"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_4_enhanced.mmd",
+      "error": "Undefined class reference: input",
+      "type": "rendering_error"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_6.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
     {
-      "file": "ai-engineer_diagram_1.mmd",
+      "file": "ai-engineer_diagram_1_enhanced.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
     {
-      "file": "README_diagram_1_enhanced.mmd",
+      "file": "ai-roles-workflows-comprehensive_diagram_5_enhanced.mmd",
       "error": "Undefined class reference: data",
       "type": "rendering_error"
     },
     {
-      "file": "README_diagram_1.mmd",
+      "file": "ai-engineer_diagram_1.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
@@ -34,17 +44,7 @@
       "type": "rendering_error"
     },
     {
-      "file": "ai-engineer_diagram_2.mmd",
-      "error": "Problematic pattern detected",
-      "type": "rendering_error"
-    },
-    {
-      "file": "ai-engineer_diagram_1_enhanced.mmd",
-      "error": "Problematic pattern detected",
-      "type": "rendering_error"
-    },
-    {
-      "file": "ai-roles-workflows-comprehensive_diagram_2.mmd",
+      "file": "README_diagram_1.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
@@ -59,23 +59,13 @@
       "type": "rendering_error"
     },
     {
-      "file": "ai-roles-workflows-comprehensive_diagram_4_enhanced.mmd",
-      "error": "Undefined class reference: input",
-      "type": "rendering_error"
-    },
-    {
-      "file": "ai-roles-workflows-comprehensive_diagram_1_enhanced.mmd",
-      "error": "Undefined class reference: ceo",
-      "type": "rendering_error"
-    },
-    {
-      "file": "ai-roles-workflows-comprehensive_diagram_5_enhanced.mmd",
+      "file": "README_diagram_1_enhanced.mmd",
       "error": "Undefined class reference: data",
       "type": "rendering_error"
     },
     {
-      "file": "ai-roles-workflows-comprehensive_diagram_11_enhanced.mmd",
-      "error": "Mismatched braces: 6 open, 5 close",
+      "file": "ai-roles-workflows-comprehensive_diagram_2.mmd",
+      "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
     {
@@ -84,32 +74,17 @@
       "type": "rendering_error"
     },
     {
-      "file": "cost-optimization_diagram_1_enhanced.mmd",
-      "error": "Undefined class reference: cost",
+      "file": "ai-roles-workflows-comprehensive_diagram_11_enhanced.mmd",
+      "error": "Mismatched braces: 6 open, 5 close",
       "type": "rendering_error"
     },
     {
-      "file": "ai-roles-workflows-comprehensive_diagram_6.mmd",
+      "file": "ai-engineer_diagram_2.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
     {
-      "file": "data-engineer_diagram_2_enhanced.mmd",
-      "error": "Problematic pattern detected",
-      "type": "rendering_error"
-    },
-    {
-      "file": "data-engineer_diagram_2.mmd",
-      "error": "Problematic pattern detected",
-      "type": "rendering_error"
-    },
-    {
-      "file": "data-engineer_diagram_1_enhanced.mmd",
-      "error": "Problematic pattern detected",
-      "type": "rendering_error"
-    },
-    {
-      "file": "data-scientist_diagram_2_enhanced.mmd",
+      "file": "ai-developer_diagram_1_enhanced.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
@@ -124,22 +99,17 @@
       "type": "rendering_error"
     },
     {
+      "file": "data-scientist_diagram_2_enhanced.mmd",
+      "error": "Problematic pattern detected",
+      "type": "rendering_error"
+    },
+    {
       "file": "ml-engineer_diagram_1.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
     {
-      "file": "data-engineer_diagram_1.mmd",
-      "error": "Problematic pattern detected",
-      "type": "rendering_error"
-    },
-    {
       "file": "ml-engineer_diagram_2.mmd",
-      "error": "Problematic pattern detected",
-      "type": "rendering_error"
-    },
-    {
-      "file": "ml-engineer_diagram_2_enhanced.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
@@ -154,7 +124,7 @@
       "type": "rendering_error"
     },
     {
-      "file": "performance-metrics_diagram_1_enhanced.mmd",
+      "file": "mlops-architecture_diagram_2_enhanced.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
@@ -164,7 +134,17 @@
       "type": "rendering_error"
     },
     {
-      "file": "mlops-architecture_diagram_2_enhanced.mmd",
+      "file": "data-engineer_diagram_1.mmd",
+      "error": "Problematic pattern detected",
+      "type": "rendering_error"
+    },
+    {
+      "file": "data-engineer_diagram_2.mmd",
+      "error": "Problematic pattern detected",
+      "type": "rendering_error"
+    },
+    {
+      "file": "role-template_diagram_1_enhanced.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
@@ -174,13 +154,28 @@
       "type": "rendering_error"
     },
     {
-      "file": "role-template_diagram_1_enhanced.mmd",
+      "file": "performance-metrics_diagram_1_enhanced.mmd",
+      "error": "Problematic pattern detected",
+      "type": "rendering_error"
+    },
+    {
+      "file": "ml-engineer_diagram_2_enhanced.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
     },
     {
       "file": "security-guide_diagram_2_enhanced.mmd",
       "error": "Undefined class reference: layer",
+      "type": "rendering_error"
+    },
+    {
+      "file": "data-engineer_diagram_2_enhanced.mmd",
+      "error": "Problematic pattern detected",
+      "type": "rendering_error"
+    },
+    {
+      "file": "cost-optimization_diagram_1_enhanced.mmd",
+      "error": "Undefined class reference: cost",
       "type": "rendering_error"
     },
     {
@@ -192,78 +187,83 @@
       "file": "security-guide_diagram_3_enhanced.mmd",
       "error": "Problematic pattern detected",
       "type": "rendering_error"
+    },
+    {
+      "file": "data-engineer_diagram_1_enhanced.mmd",
+      "error": "Problematic pattern detected",
+      "type": "rendering_error"
     }
   ],
   "successful_files": [
-    "ai-developer_diagram_1.mmd",
-    "ai-developer_diagram_2.mmd",
-    "ai-roles-workflows-comprehensive_diagram_1.mmd",
-    "ai-developer_diagram_3.mmd",
-    "ai-developer_diagram_3_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_10.mmd",
-    "ai-roles-workflows-comprehensive_diagram_10_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_3.mmd",
-    "ai-roles-workflows-comprehensive_diagram_3_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_5.mmd",
-    "ai-roles-workflows-comprehensive_diagram_4.mmd",
     "ai-roles-workflows-comprehensive_diagram_8_enhanced.mmd",
-    "career-pathways_diagram_1_enhanced.mmd",
-    "career-pathways_diagram_1.mmd",
+    "ai-roles-workflows-comprehensive_diagram_10.mmd",
+    "ai-roles-workflows-comprehensive_diagram_5.mmd",
+    "ai-roles-workflows-comprehensive_diagram_3_enhanced.mmd",
+    "ai-developer_diagram_3_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_4.mmd",
     "ai-roles-workflows-comprehensive_diagram_8.mmd",
+    "ai-roles-workflows-comprehensive_diagram_10_enhanced.mmd",
+    "ai-developer_diagram_1.mmd",
     "ai-roles-workflows-comprehensive_diagram_9_enhanced.mmd",
-    "cost-optimization_diagram_1.mmd",
+    "ai-developer_diagram_3.mmd",
+    "ai-developer_diagram_2.mmd",
     "ai-roles-workflows-comprehensive_diagram_9.mmd",
+    "ai-roles-workflows-comprehensive_diagram_3.mmd",
+    "ai-roles-workflows-comprehensive_diagram_1.mmd",
+    "career-pathways_diagram_1.mmd",
     "data-scientist_diagram_1.mmd",
+    "career-pathways_diagram_1_enhanced.mmd",
     "mlops-architecture_diagram_1.mmd",
-    "performance-metrics_diagram_1.mmd",
-    "role-template_diagram_1.mmd",
     "mlops-architecture_diagram_2.mmd",
+    "mlops-architecture_diagram_3.mmd",
+    "role-template_diagram_1.mmd",
     "security-guide_diagram_1.mmd",
     "security-guide_diagram_2.mmd",
     "security-guide_diagram_3.mmd",
-    "mlops-architecture_diagram_3.mmd",
+    "cost-optimization_diagram_1.mmd",
+    "performance-metrics_diagram_1.mmd",
     "security-guide_diagram_4.mmd",
     "security-guide_diagram_5.mmd",
     "security-guide_diagram_4_enhanced.mmd"
   ],
   "failed_files": [
-    "ai-developer_diagram_1_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_1_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_4_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_6.mmd",
+    "ai-engineer_diagram_1_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_5_enhanced.mmd",
     "ai-engineer_diagram_1.mmd",
-    "README_diagram_1_enhanced.mmd",
-    "README_diagram_1.mmd",
     "ai-engineer_diagram_2_enhanced.mmd",
     "ai-developer_diagram_2_enhanced.mmd",
-    "ai-engineer_diagram_2.mmd",
-    "ai-engineer_diagram_1_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_2.mmd",
+    "README_diagram_1.mmd",
     "ai-roles-workflows-comprehensive_diagram_11.mmd",
     "ai-roles-workflows-comprehensive_diagram_2_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_4_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_1_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_5_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_11_enhanced.mmd",
+    "README_diagram_1_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_2.mmd",
     "ai-roles-workflows-comprehensive_diagram_6_enhanced.mmd",
-    "cost-optimization_diagram_1_enhanced.mmd",
-    "ai-roles-workflows-comprehensive_diagram_6.mmd",
-    "data-engineer_diagram_2_enhanced.mmd",
-    "data-engineer_diagram_2.mmd",
-    "data-engineer_diagram_1_enhanced.mmd",
-    "data-scientist_diagram_2_enhanced.mmd",
+    "ai-roles-workflows-comprehensive_diagram_11_enhanced.mmd",
+    "ai-engineer_diagram_2.mmd",
+    "ai-developer_diagram_1_enhanced.mmd",
     "data-scientist_diagram_1_enhanced.mmd",
     "data-scientist_diagram_2.mmd",
+    "data-scientist_diagram_2_enhanced.mmd",
     "ml-engineer_diagram_1.mmd",
-    "data-engineer_diagram_1.mmd",
     "ml-engineer_diagram_2.mmd",
-    "ml-engineer_diagram_2_enhanced.mmd",
     "ml-engineer_diagram_1_enhanced.mmd",
     "mlops-architecture_diagram_1_enhanced.mmd",
-    "performance-metrics_diagram_1_enhanced.mmd",
-    "mlops-architecture_diagram_3_enhanced.mmd",
     "mlops-architecture_diagram_2_enhanced.mmd",
-    "security-guide_diagram_1_enhanced.mmd",
+    "mlops-architecture_diagram_3_enhanced.mmd",
+    "data-engineer_diagram_1.mmd",
+    "data-engineer_diagram_2.mmd",
     "role-template_diagram_1_enhanced.mmd",
+    "security-guide_diagram_1_enhanced.mmd",
+    "performance-metrics_diagram_1_enhanced.mmd",
+    "ml-engineer_diagram_2_enhanced.mmd",
     "security-guide_diagram_2_enhanced.mmd",
+    "data-engineer_diagram_2_enhanced.mmd",
+    "cost-optimization_diagram_1_enhanced.mmd",
     "security-guide_diagram_5_enhanced.mmd",
-    "security-guide_diagram_3_enhanced.mmd"
+    "security-guide_diagram_3_enhanced.mmd",
+    "data-engineer_diagram_1_enhanced.mmd"
   ]
 }

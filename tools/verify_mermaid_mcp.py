@@ -242,13 +242,9 @@ def main():
     for d_type, count in report["summary"]["diagram_types"].items():
         print(f"  {d_type}: {count} diagrams")
 
-    print(
-        f"\n✅ Verification complete! All diagrams have been analyzed for syntax validity."
-    )
-    print(
-        f"   Note: This verification checks syntax only. For full rendering verification,"
-    )
-    print(f"   use the MCP server to generate actual images of the diagrams.")
+    print("\n✅ Verification complete! All diagrams analyzed for syntax validity.")
+    print("   Note: This checks syntax only. For full rendering verification,")
+    print("   use the MCP server to generate actual images of the diagrams.")
 
 
 if __name__ == "__main__":

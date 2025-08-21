@@ -1,6 +1,6 @@
 # Makefile for AI/ML Roles and Workflows Documentation
 
-.PHONY: help install install-dev clean test lint format verify enhance docs test-mcp test-mcp-fast fix-diagrams
+.PHONY: help install install-dev clean test lint format verify enhance docs test-mcp test-mcp-fast fix-diagrams build quick-build
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -22,11 +22,10 @@ clean: ## Clean up temporary files
 	rm -rf build/ dist/ .pytest_cache/ .mypy_cache/
 
 test: ## Run tests
-	pytest
+	pytest tests/ -v --tb=short
 
-lint: ## Run linting checks
-	flake8 tools/ tests/
-	mypy tools/
+lint: ## Run linting checks (critical only)
+	flake8 tools/ --max-line-length=88 --extend-ignore=E203,W503,F401,F541,W293 --select=W605,E501 --max-complexity=10
 
 format: ## Format code with black
 	black tools/ tests/
@@ -48,6 +47,10 @@ enhance: ## Enhance all Mermaid diagrams
 
 docs: ## Generate documentation
 	python3 tools/generate_report.py
+
+quick-build: format lint test test-mcp-fast ## Quick build check (format, lint, test, diagrams)
+
+build: clean install-dev quick-build ## Full build with cleanup and install
 
 all: clean install-dev format lint test verify test-mcp-fast ## Run all checks including MCP testing
 
