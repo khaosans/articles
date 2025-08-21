@@ -317,59 +317,41 @@ graph TD
     B -->|Yes| C{High Accuracy Needed?}
     B -->|No| D{Batch Processing?}
     
-    C -->|Yes| E[GPT-4/Claude-3 Sonnet]
-    C -->|No| F[GPT-3.5/Claude-3 Haiku]
+    C -->|Yes| E[GPT-4/Claude-3 Sonnet<br/>High Performance LLM]
+    C -->|No| F[GPT-3.5/Claude-3 Haiku<br/>Balanced Performance]
     
     D -->|Yes| G{Complex Patterns?}
-    D -->|No| H[Rule-based System]
+    D -->|No| H[Rule-based System<br/>Simple Logic]
     
-    G -->|Yes| I[Custom ML Model]
-    G -->|No| J[Simple Heuristics]
+    G -->|Yes| I[Custom ML Model<br/>Specialized Training]
+    G -->|No| J[Simple Heuristics<br/>Basic Rules]
     
-    E --> K[Cost: $0.03/1K tokens]
-    F --> L[Cost: $0.002/1K tokens]
-    I --> M[Cost: $0.001/prediction]
-    J --> N[Cost: $0.0001/prediction]
-    H --> O[Cost: $0.00001/prediction]
+    E --> K[Cost: $0.03/1K tokens<br/>High Quality Output]
+    F --> L[Cost: $0.002/1K tokens<br/>Good Quality Output]
+    I --> M[Cost: $0.001/prediction<br/>Custom Performance]
+    J --> N[Cost: $0.0001/prediction<br/>Basic Performance]
+    H --> O[Cost: $0.00001/prediction<br/>Minimal Cost]
     
-    style A fill:#e3f2fd
-    style K fill:#ffebee
-    style L fill:#fff3e0
-    style M fill:#e8f5e8
-    style N fill:#f3e5f5
-    style O fill:#f1f8e9
+    %% Enhanced styling with better visual hierarchy
+    classDef start fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
+    classDef decision fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
+    classDef highCost fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    classDef mediumCost fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000
+    classDef lowCost fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+    classDef lowestCost fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+    
+    class A start
+    class B,C,D decision
+    class E,K highCost
+    class F,L mediumCost
+    class I,M lowCost
+    class J,N lowestCost
+    class H,O lowestCost
 ```
 
 *Figure 5: Model Selection Decision Tree. Provides a systematic approach to model selection based on real-time requirements, accuracy needs, and processing type, with associated cost implications.*
 
-### AI Project Timeline
 
-```mermaid
-gantt
-    title AI Project Implementation Timeline
-    dateFormat  YYYY-MM-DD
-    section Planning
-    Requirements Gathering    :done, req, 2024-01-01, 2024-01-14
-    Architecture Design      :done, arch, 2024-01-15, 2024-01-28
-    Team Assembly           :done, team, 2024-01-29, 2024-02-11
-    
-    section Development
-    Data Pipeline           :active, data, 2024-02-12, 2024-03-11
-    Model Development       :model, 2024-02-26, 2024-04-09
-    API Development         :api, 2024-03-12, 2024-04-23
-    
-    section Testing
-    Unit Testing           :test, 2024-04-10, 2024-04-23
-    Integration Testing    :int, 2024-04-24, 2024-05-07
-    Security Testing       :sec, 2024-05-08, 2024-05-21
-    
-    section Deployment
-    Staging Deployment     :stage, 2024-05-22, 2024-06-04
-    Production Deployment  :prod, 2024-06-05, 2024-06-18
-    Monitoring Setup       :mon, 2024-06-19, 2024-07-02
-```
-
-*Figure 6: AI Project Implementation Timeline. Shows a comprehensive 6-month project timeline from planning through deployment, with parallel development tracks and sequential testing phases.*
 
 ## 4.3 LLM Application Stack
 
@@ -423,21 +405,31 @@ pie title AI Project Cost Distribution (2024)
 
 *Figure 7: AI Project Cost Breakdown. Illustrates typical cost distribution in AI projects, with model API costs representing the largest expense (35%), followed by infrastructure (25%) and data processing (20%).*
 
-### Skill Assessment Radar Chart
+### Skill Assessment Bar Chart
 
 ```mermaid
-radar title AI Engineer Skill Assessment
-    "Prompt Engineering" : 85
-    "RAG Systems" : 90
-    "API Development" : 80
-    "Security" : 70
-    "Cost Optimization" : 75
-    "Monitoring" : 80
-    "Testing" : 85
-    "Documentation" : 90
+graph LR
+    subgraph "AI Engineer Skill Assessment"
+        A[Prompt Engineering<br/>85%] --> B[RAG Systems<br/>90%]
+        B --> C[API Development<br/>80%]
+        C --> D[Security<br/>70%]
+        D --> E[Cost Optimization<br/>75%]
+        E --> F[Monitoring<br/>80%]
+        F --> G[Testing<br/>85%]
+        G --> H[Documentation<br/>90%]
+    end
+    
+    classDef high fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    classDef medium fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000
+    classDef low fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    
+    class B,H high
+    class A,G medium
+    class C,F medium
+    class D,E low
 ```
 
-*Figure 8: AI Engineer Skill Assessment Radar Chart. Shows proficiency levels across 8 key skill areas for an AI Engineer, with RAG Systems and Documentation being the strongest areas (90%) and Security being the area for improvement (70%).*
+*Figure 8: AI Engineer Skill Assessment Bar Chart. Shows proficiency levels across 8 key skill areas for an AI Engineer, with RAG Systems and Documentation being the strongest areas (90%) and Security being the area for improvement (70%).*
 
 ---
 
@@ -495,7 +487,7 @@ classDiagram
         +String team_name
         +int team_size
         +String project_phase
-        +List~Role~ roles
+        +List roles
         +add_member(Role)
         +remove_member(Role)
     }
@@ -504,36 +496,36 @@ classDiagram
         <<abstract>>
         +String title
         +String level
-        +List~Skill~ skills
-        +List~Responsibility~ responsibilities
+        +List skills
+        +List responsibilities
         +get_salary_range()
     }
     
     class AI_Engineer {
         +String specialization
-        +List~Model~ deployed_models
+        +List deployed_models
         +optimize_performance()
         +deploy_model()
     }
     
     class ML_Engineer {
         +String ml_framework
-        +List~Pipeline~ pipelines
+        +List pipelines
         +train_model()
         +evaluate_model()
     }
     
     class Data_Engineer {
         +String data_stack
-        +List~Pipeline~ etl_pipelines
+        +List etl_pipelines
         +build_pipeline()
         +maintain_data_quality()
     }
     
     AI_Team ||--o{ Role : contains
-    Role <|-- AI_Engineer
-    Role <|-- ML_Engineer
-    Role <|-- Data_Engineer
+    Role <|-- AI_Engineer : "implements"
+    Role <|-- ML_Engineer : "implements"
+    Role <|-- Data_Engineer : "implements"
 ```
 
 *Figure 10: AI Team Structure Class Diagram. Shows the object-oriented design of AI teams with abstract Role class and concrete implementations for AI Engineer, ML Engineer, and Data Engineer roles.*

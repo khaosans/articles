@@ -1,16 +1,44 @@
-stateDiagram-v2
-    [*] --> Planning
-    Planning --> Development
-    Development --> Testing
-    Testing --> Staging
-    Staging --> Production
-    Production --> Monitoring
-    Monitoring --> Maintenance
-    Maintenance --> Production
-    Production --> Retirement
-    Retirement --> [*]
+classDiagram
+    class AI_Team {
+        +String team_name
+        +int team_size
+        +String project_phase
+        +List roles
+        +add_member(Role)
+        +remove_member(Role)
+    }
     
-    Testing --> Development : Issues Found
-    Staging --> Development : Failures
-    Production --> Development : Critical Bugs
-    Monitoring --> Development : Performance Issues
+    class Role {
+        <<abstract>>
+        +String title
+        +String level
+        +List skills
+        +List responsibilities
+        +get_salary_range()
+    }
+    
+    class AI_Engineer {
+        +String specialization
+        +List deployed_models
+        +optimize_performance()
+        +deploy_model()
+    }
+    
+    class ML_Engineer {
+        +String ml_framework
+        +List pipelines
+        +train_model()
+        +evaluate_model()
+    }
+    
+    class Data_Engineer {
+        +String data_stack
+        +List etl_pipelines
+        +build_pipeline()
+        +maintain_data_quality()
+    }
+    
+    AI_Team ||--o{ Role : contains
+    Role <|-- AI_Engineer : "implements"
+    Role <|-- ML_Engineer : "implements"
+    Role <|-- Data_Engineer : "implements"

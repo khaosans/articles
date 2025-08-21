@@ -1,0 +1,293 @@
+{
+  "total_diagrams": 34,
+  "verified_diagrams": 34,
+  "failed_diagrams": 0,
+  "syntax_errors": [],
+  "read_errors": [],
+  "diagram_details": [
+    {
+      "file": "ai-developer_diagram_1.mmd",
+      "size_bytes": 616,
+      "lines": 12,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_6.mmd",
+      "size_bytes": 1479,
+      "lines": 35,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "career-pathways_diagram_1.mmd",
+      "size_bytes": 420,
+      "lines": 22,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "mindmap"
+    },
+    {
+      "file": "ai-engineer_diagram_2.mmd",
+      "size_bytes": 527,
+      "lines": 10,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_4.mmd",
+      "size_bytes": 848,
+      "lines": 17,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-developer_diagram_2.mmd",
+      "size_bytes": 489,
+      "lines": 10,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-developer_diagram_3.mmd",
+      "size_bytes": 193,
+      "lines": 6,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "other"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_5.mmd",
+      "size_bytes": 834,
+      "lines": 22,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-engineer_diagram_1.mmd",
+      "size_bytes": 541,
+      "lines": 10,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_1.mmd",
+      "size_bytes": 471,
+      "lines": 10,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ml-engineer_diagram_2.mmd",
+      "size_bytes": 648,
+      "lines": 12,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "data-scientist_diagram_1.mmd",
+      "size_bytes": 836,
+      "lines": 18,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_2.mmd",
+      "size_bytes": 633,
+      "lines": 15,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "role-template_diagram_1.mmd",
+      "size_bytes": 503,
+      "lines": 11,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ml-engineer_diagram_1.mmd",
+      "size_bytes": 998,
+      "lines": 15,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "data-scientist_diagram_2.mmd",
+      "size_bytes": 614,
+      "lines": 13,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_3.mmd",
+      "size_bytes": 788,
+      "lines": 29,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "sequenceDiagram"
+    },
+    {
+      "file": "performance-metrics_diagram_1.mmd",
+      "size_bytes": 631,
+      "lines": 15,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "README_diagram_1.mmd",
+      "size_bytes": 750,
+      "lines": 23,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "cost-optimization_diagram_1.mmd",
+      "size_bytes": 377,
+      "lines": 11,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "security-guide_diagram_2.mmd",
+      "size_bytes": 614,
+      "lines": 18,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "mlops-architecture_diagram_1.mmd",
+      "size_bytes": 706,
+      "lines": 15,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "security-guide_diagram_3.mmd",
+      "size_bytes": 1179,
+      "lines": 55,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "security-guide_diagram_1.mmd",
+      "size_bytes": 524,
+      "lines": 16,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "mlops-architecture_diagram_2.mmd",
+      "size_bytes": 506,
+      "lines": 11,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "mlops-architecture_diagram_3.mmd",
+      "size_bytes": 501,
+      "lines": 11,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "data-engineer_diagram_2.mmd",
+      "size_bytes": 676,
+      "lines": 12,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "security-guide_diagram_4.mmd",
+      "size_bytes": 804,
+      "lines": 22,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "other"
+    },
+    {
+      "file": "security-guide_diagram_5.mmd",
+      "size_bytes": 409,
+      "lines": 10,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "data-engineer_diagram_1.mmd",
+      "size_bytes": 558,
+      "lines": 10,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "graph"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_11.mmd",
+      "size_bytes": 925,
+      "lines": 44,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "classDiagram"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_10.mmd",
+      "size_bytes": 475,
+      "lines": 16,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "other"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_8.mmd",
+      "size_bytes": 219,
+      "lines": 7,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "other"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_9.mmd",
+      "size_bytes": 235,
+      "lines": 9,
+      "syntax_valid": true,
+      "error_message": "Syntax appears valid",
+      "diagram_type": "radar"
+    }
+  ],
+  "summary": {
+    "diagram_types": {
+      "graph": 26,
+      "mindmap": 1,
+      "other": 4,
+      "sequenceDiagram": 1,
+      "classDiagram": 1,
+      "radar": 1
+    },
+    "success_rate": 100.0,
+    "average_size_bytes": 633.1470588235294
+  }
+}

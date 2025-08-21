@@ -1,7 +1,19 @@
-pie title AI Project Cost Distribution (2024)
-    "Model API Costs" : 35
-    "Infrastructure" : 25
-    "Data Processing" : 20
-    "Security & Compliance" : 10
-    "Monitoring & Observability" : 5
-    "Team Training" : 5
+graph LR
+    subgraph "AI Engineer Skill Assessment"
+        A[Prompt Engineering<br/>85%] --> B[RAG Systems<br/>90%]
+        B --> C[API Development<br/>80%]
+        C --> D[Security<br/>70%]
+        D --> E[Cost Optimization<br/>75%]
+        E --> F[Monitoring<br/>80%]
+        F --> G[Testing<br/>85%]
+        G --> H[Documentation<br/>90%]
+    end
+    
+    classDef high fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    classDef medium fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#000
+    classDef low fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#000
+    
+    class B,H high
+    class A,G medium
+    class C,F medium
+    class D,E low
