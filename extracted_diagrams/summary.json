@@ -1,7 +1,8 @@
 {
-  "total_files": 33,
-  "total_diagrams": 33,
+  "total_files": 34,
+  "total_diagrams": 37,
   "diagrams_by_file": {
+    "./README.md": 4,
     "./guides/roles/ml-engineer.md": 2,
     "./guides/roles/ai-engineer.md": 2,
     "./guides/roles/data-scientist.md": 2,

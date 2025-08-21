@@ -1,6 +1,276 @@
 {
-  "total": 68,
-  "valid": 68,
-  "broken": 0,
-  "broken_files": []
+  "total": 72,
+  "valid": 5,
+  "broken": 67,
+  "broken_files": [
+    {
+      "file": "README_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "README_diagram_1_enhanced.mmd",
+      "error": "Undefined class reference: data"
+    },
+    {
+      "file": "README_diagram_3.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "README_diagram_4.mmd",
+      "error": "Potentially problematic character: &"
+    },
+    {
+      "file": "ai-developer_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-developer_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-developer_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-developer_diagram_2_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-developer_diagram_3.mmd",
+      "error": "Potentially problematic character: &"
+    },
+    {
+      "file": "ai-developer_diagram_3_enhanced.mmd",
+      "error": "Potentially problematic character: &"
+    },
+    {
+      "file": "ai-engineer_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-engineer_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "ai-engineer_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-engineer_diagram_2_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_10.mmd",
+      "error": "Mismatched braces: 6 open, 5 close"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_10_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_11.mmd",
+      "error": "Mismatched braces: 6 open, 5 close"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_11_enhanced.mmd",
+      "error": "Mismatched braces: 6 open, 5 close"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_1_enhanced.mmd",
+      "error": "Undefined class reference: ceo"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_2_enhanced.mmd",
+      "error": "Undefined class reference: squad"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_3.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_3_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_4.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_4_enhanced.mmd",
+      "error": "Undefined class reference: input"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_5.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_5_enhanced.mmd",
+      "error": "Undefined class reference: data"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_6.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_6_enhanced.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_7.mmd",
+      "error": "Potentially problematic character: &"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_8.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_8_enhanced.mmd",
+      "error": "Potentially problematic character: &"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_9.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ai-roles-workflows-comprehensive_diagram_9_enhanced.mmd",
+      "error": "Potentially problematic character: \""
+    },
+    {
+      "file": "cost-optimization_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "cost-optimization_diagram_1_enhanced.mmd",
+      "error": "Undefined class reference: cost"
+    },
+    {
+      "file": "data-engineer_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "data-engineer_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "data-engineer_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "data-engineer_diagram_2_enhanced.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "data-scientist_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "data-scientist_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "data-scientist_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "data-scientist_diagram_2_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ml-engineer_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ml-engineer_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "ml-engineer_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "ml-engineer_diagram_2_enhanced.mmd",
+      "error": "Potentially problematic character: <"
+    },
+    {
+      "file": "mlops-architecture_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "mlops-architecture_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "mlops-architecture_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "mlops-architecture_diagram_2_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "mlops-architecture_diagram_3.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "mlops-architecture_diagram_3_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "performance-metrics_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "performance-metrics_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "role-template_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "role-template_diagram_1_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "security-guide_diagram_1.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "security-guide_diagram_1_enhanced.mmd",
+      "error": "Undefined class reference: threat"
+    },
+    {
+      "file": "security-guide_diagram_2.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "security-guide_diagram_2_enhanced.mmd",
+      "error": "Undefined class reference: layer"
+    },
+    {
+      "file": "security-guide_diagram_3.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "security-guide_diagram_3_enhanced.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "security-guide_diagram_5.mmd",
+      "error": "Potentially problematic character: >"
+    },
+    {
+      "file": "security-guide_diagram_5_enhanced.mmd",
+      "error": "Undefined class reference: governance"
+    }
+  ],
+  "warnings": []
 }

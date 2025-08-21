@@ -1,23 +1,53 @@
-graph TD
-    classDef data fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-    classDef ml fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000
-    classDef ai fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
-    classDef ops fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '14px', 'fontFamily': 'Segoe UI, Arial, sans-serif', 'primaryColor': '#2563eb', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#1e40af', 'lineColor': '#64748b', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669'}}}%%
+graph TB
+    A["AI and Data Roles Framework"] --> B["Research Reports"]
+    A --> C["Role Guides"]
+    A --> D["Implementation Guides"]
+    A --> E["Assessment Tools"]
     
-    A[Data Sources]:::data --> B[Data Engineering]:::data
-    B --> C[Data Science]:::ml
-    C --> D[ML Engineering]:::ml
-    D --> E[AI Engineering]:::ai
-    E --> F[AI Development]:::ai
-    F --> G[Production Systems]:::ops
+    B --> B1["Comprehensive Analysis"]
+    B --> B2["Organizational Patterns"]
+    B --> B3["Industry Insights"]
     
-    B --> H[MLOps Architecture]:::ops
-    C --> H
-    D --> H
-    E --> H
-    F --> H
-    H --> G
+    C --> C1["AI Engineer"]
+    C --> C2["ML Engineer"]
+    C --> C3["Data Engineer"]
+    C --> C4["Data Scientist"]
+    C --> C5["AI Developer"]
     
-    %% Add security and cost layers
-    I[Security & Compliance]:::ops --> H
-    J[Cost Management]:::ops --> H
+    D --> D1["MLOps Architecture"]
+    D --> D2["Security Guidelines"]
+    D --> D3["Cost Optimization"]
+    
+    E --> E1["Skills Assessment"]
+    E --> E2["Performance Metrics"]
+    E --> E3["Career Pathways"]
+    
+    %% Main framework styling
+    style A fill:#2563eb,stroke:#1e40af,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+    
+    %% Research Reports - Purple theme
+    style B fill:#7c3aed,stroke:#5b21b6,stroke-width:2px,color:#ffffff,font-weight:bold
+    style B1 fill:#c4b5fd,stroke:#6d28d9,stroke-width:1px,color:#1e1b4b,font-weight:bold
+    style B2 fill:#c4b5fd,stroke:#6d28d9,stroke-width:1px,color:#1e1b4b,font-weight:bold
+    style B3 fill:#c4b5fd,stroke:#6d28d9,stroke-width:1px,color:#1e1b4b,font-weight:bold
+    
+    %% Role Guides - Green theme
+    style C fill:#059669,stroke:#047857,stroke-width:2px,color:#ffffff,font-weight:bold
+    style C1 fill:#a7f3d0,stroke:#10b981,stroke-width:1px,color:#064e3b,font-weight:bold
+    style C2 fill:#a7f3d0,stroke:#10b981,stroke-width:1px,color:#064e3b,font-weight:bold
+    style C3 fill:#a7f3d0,stroke:#10b981,stroke-width:1px,color:#064e3b,font-weight:bold
+    style C4 fill:#a7f3d0,stroke:#10b981,stroke-width:1px,color:#064e3b,font-weight:bold
+    style C5 fill:#a7f3d0,stroke:#10b981,stroke-width:1px,color:#064e3b,font-weight:bold
+    
+    %% Implementation Guides - Orange theme
+    style D fill:#ea580c,stroke:#c2410c,stroke-width:2px,color:#ffffff,font-weight:bold
+    style D1 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#7c2d12,font-weight:bold
+    style D2 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#7c2d12,font-weight:bold
+    style D3 fill:#fed7aa,stroke:#f97316,stroke-width:1px,color:#7c2d12,font-weight:bold
+    
+    %% Assessment Tools - Red theme
+    style E fill:#dc2626,stroke:#b91c1c,stroke-width:2px,color:#ffffff,font-weight:bold
+    style E1 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#7f1d1d,font-weight:bold
+    style E2 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#7f1d1d,font-weight:bold
+    style E3 fill:#fecaca,stroke:#ef4444,stroke-width:1px,color:#7f1d1d,font-weight:bold
