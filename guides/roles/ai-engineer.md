@@ -147,7 +147,7 @@ Google Cloud Blog. "Optimizing Translation Models with Pruning." *Google Cloud B
 
 Harvard Business Review. "Governance in AI Deployments." *HBR*, 2024, hbr.org/2024/03/ai-governance.
 
-LinkedIn Talent Insights. "AI Engineer Salary Report." *LinkedIn*, 2025, [linkedin.com/salary/ai-engineer](https://linkedin.com/salary/ai-engineer).
+LinkedIn Talent Insights. "AI Engineer Salary Report." *LinkedIn*, 2025, linkedin.com/talent/blog/ai-engineer-salary-report-2025.
 
 Index.dev. "AI Engineer vs. ML Engineer: What's the Difference?" *Index.dev Blog*, 2025, index.dev/blog.
 
