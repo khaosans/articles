@@ -196,15 +196,17 @@ def test_makefile_targets():
 
 
 def test_ci_workflow_includes_mcp():
-    """Test that CI workflow includes MCP testing"""
-    ci_path = Path(".github/workflows/ci.yml")
-    assert ci_path.exists(), "CI workflow not found"
+    """Test that docs verification workflow includes proper testing"""
+    workflow_path = Path(".github/workflows/docs-verification.yml")
+    assert workflow_path.exists(), "Docs verification workflow not found"
 
-    with open(ci_path, "r", encoding="utf-8") as f:
+    with open(workflow_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Check for MCP testing steps
+    # Check for verification steps
     assert (
-        "Verify Mermaid diagrams (fast)" in content
-    ), "MCP testing step not found in CI"
-    assert "fast_mcp_test.py" in content, "Fast MCP test script not referenced in CI"
+        "Verify Python scripts" in content
+    ), "Python script verification step not found in workflow"
+    assert (
+        "extract_mermaid.py" in content
+    ), "Mermaid extraction script not referenced in workflow"
