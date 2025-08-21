@@ -34,7 +34,7 @@ This guide provides comprehensive performance metrics and evaluation frameworks 
 ### 1.2 Metric Selection Framework
 
 ```mermaid
-flowchart TD
+graph TD
     A[Use Case Analysis] --> B[Business Objectives]
     B --> C[Technical Requirements]
     C --> D[Metric Selection]
@@ -116,6 +116,50 @@ def evaluate_classification_model(y_true, y_pred, y_prob=None):
 - **Bias Detection**: Measurement of demographic bias in responses
 - **Toxicity Score**: Assessment of harmful content generation
 - **Adversarial Robustness**: Resistance to prompt injection attacks
+
+### 2.4 Explainable AI (XAI) Metrics
+
+**Research Basis**: XAI metrics are critical for model trust and regulatory compliance (Duke University, 2024)
+
+#### Interpretability Metrics:
+- **Explanation Fidelity**: How well explanations match model behavior
+- **Explanation Stability**: Consistency of explanations across similar inputs
+- **Explanation Completeness**: Percentage of model decisions explained
+- **Human Comprehension**: User understanding of explanations (measured via surveys)
+
+#### XAI Implementation Metrics:
+
+```python
+def evaluate_xai_metrics(model, explainer, test_data):
+    """Evaluate XAI metrics based on Duke University framework"""
+    metrics = {}
+    
+    # Explanation fidelity
+    metrics['fidelity'] = calculate_explanation_fidelity(model, explainer, test_data)
+    
+    # Explanation stability
+    metrics['stability'] = calculate_explanation_stability(explainer, test_data)
+    
+    # Completeness
+    metrics['completeness'] = calculate_explanation_completeness(explainer, test_data)
+    
+    # Human comprehension (requires user study)
+    metrics['comprehension'] = conduct_comprehension_study(explainer, test_data)
+    
+    return metrics
+```
+
+#### XAI Performance Benchmarks:
+
+| Metric | Target | Measurement Method | Duke Course Reference |
+|--------|--------|-------------------|----------------------|
+| **Explanation Fidelity** | >90% | SHAP/LIME accuracy | Module 2: Interpretability |
+| **Explanation Stability** | >85% | Consistency across perturbations | Module 3: Robustness |
+| **Completeness** | >95% | Coverage of model decisions | Module 4: Completeness |
+| **Human Comprehension** | >80% | User survey scores | Module 5: Human-AI Interaction |
+| **Compliance Score** | 100% | Regulatory audit | Module 6: Ethics & Compliance |
+
+*Source: Duke University Coursera Course "Explainable AI: Scene Understanding and Generation" (2024)*
 
 ---
 

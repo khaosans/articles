@@ -34,7 +34,7 @@ This guide provides comprehensive security best practices for AI/ML systems in e
 ### 1.2 Attack Vectors
 
 ```mermaid
-flowchart TD
+graph TD
     classDef threat fill:#ffebee,stroke:#d32f2f,stroke-width:2px
     classDef defense fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
     
@@ -61,7 +61,7 @@ flowchart TD
 **Research Basis**: Zero-trust reduces AI security incidents by 80% (NIST, 2024; Google Cloud, 2024)
 
 ```mermaid
-flowchart TB
+graph TB
     classDef layer fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
     classDef control fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
     classDef monitor fill:#fff3e0,stroke:#f57c00,stroke-width:2px
@@ -91,6 +91,93 @@ flowchart TB
 4. **Application Security**: Input validation, secure coding practices
 5. **AI-Specific Controls**: Prompt injection detection, model monitoring
 6. **Monitoring & Response**: Real-time threat detection, incident response
+
+### AI Security Architecture Layers
+
+```mermaid
+graph TB
+    subgraph "Layer 7: Business Logic"
+        A[AI Application]
+        B[Business Rules]
+    end
+    
+    subgraph "Layer 6: Application Security"
+        C[Input Validation]
+        D[Prompt Sanitization]
+        E[Output Filtering]
+    end
+    
+    subgraph "Layer 5: AI Model Security"
+        F[Model Watermarking]
+        G[Adversarial Testing]
+        H[Safety Filters]
+    end
+    
+    subgraph "Layer 4: Data Security"
+        I[Data Encryption]
+        J[PII Detection]
+        K[Access Controls]
+    end
+    
+    subgraph "Layer 3: Network Security"
+        L[API Gateway]
+        M[Rate Limiting]
+        N[DDoS Protection]
+    end
+    
+    subgraph "Layer 2: Infrastructure Security"
+        O[Container Security]
+        P[Secrets Management]
+        Q[Network Segmentation]
+    end
+    
+    subgraph "Layer 1: Physical Security"
+        R[Data Center Security]
+        S[Hardware Security]
+    end
+    
+    A --> C
+    C --> F
+    F --> I
+    I --> L
+    L --> O
+    O --> R
+    
+    style A fill:#e3f2fd
+    style C fill:#e8f5e8
+    style F fill:#fff3e0
+    style I fill:#ffebee
+    style L fill:#f3e5f5
+    style O fill:#f1f8e9
+    style R fill:#e0f2f1
+```
+
+### Security Incident Response Timeline
+
+```mermaid
+gantt
+    title AI Security Incident Response Timeline
+    dateFormat  YYYY-MM-DD
+    section Detection
+    Threat Detection     :detect, 2024-01-01, 1h
+    Alert Generation     :alert, after detect, 30m
+    Initial Assessment  :assess, after alert, 1h
+    
+    section Response
+    Containment         :contain, after assess, 2h
+    Investigation       :investigate, after contain, 4h
+    Remediation         :remediate, after investigate, 6h
+    
+    section Recovery
+    System Restoration  :restore, after remediate, 2h
+    Validation          :validate, after restore, 1h
+    Monitoring          :monitor, after validate, 24h
+    
+    section Post-Incident
+    Documentation       :doc, after monitor, 4h
+    Lessons Learned     :learn, after doc, 2h
+    Process Update      :update, after learn, 1h
+```
 
 ---
 
@@ -132,6 +219,62 @@ def sanitize_prompt(user_input: str) -> str:
 #### Protection Measures:
 - **Model Watermarking**: Embed unique identifiers in model outputs
 - **API Rate Limiting**: Prevent rapid model queries for extraction
+
+### 3.3 Explainable AI Security
+
+**Research Basis**: XAI enhances security by making model decisions transparent and auditable (Duke University, 2024)
+
+#### XAI Security Benefits:
+- **Adversarial Detection**: Identify when models are being manipulated
+- **Bias Detection**: Uncover discriminatory patterns in model decisions
+- **Audit Trail**: Provide explanations for regulatory compliance
+- **Trust Building**: Increase user confidence in AI systems
+
+#### XAI Security Implementation:
+
+```python
+class XAISecurityMonitor:
+    def __init__(self, model, explainer):
+        self.model = model
+        self.explainer = explainer
+        self.security_thresholds = {
+            'explanation_confidence': 0.8,
+            'feature_importance_stability': 0.7,
+            'adversarial_detection': 0.9
+        }
+    
+    def monitor_prediction_security(self, input_data):
+        """Monitor prediction security using XAI methods"""
+        # Generate explanation
+        explanation = self.explainer.explain(input_data)
+        
+        # Check for adversarial patterns
+        adversarial_score = self.detect_adversarial_patterns(explanation)
+        
+        # Verify explanation stability
+        stability_score = self.check_explanation_stability(input_data)
+        
+        # Assess bias in decision
+        bias_score = self.assess_decision_bias(explanation)
+        
+        return {
+            'adversarial_detected': adversarial_score > self.security_thresholds['adversarial_detection'],
+            'explanation_stable': stability_score > self.security_thresholds['feature_importance_stability'],
+            'bias_detected': bias_score > 0.5,
+            'security_score': (adversarial_score + stability_score + (1 - bias_score)) / 3
+        }
+```
+
+#### XAI Security Metrics:
+
+| Security Aspect | XAI Method | Metric | Target | Duke Course Reference |
+|----------------|------------|--------|--------|----------------------|
+| **Adversarial Detection** | SHAP Analysis | Explanation consistency | >90% | Module 3: Robustness |
+| **Bias Detection** | Feature Importance | Demographic parity | <5% difference | Module 4: Fairness |
+| **Audit Compliance** | LIME Explanations | Explanation coverage | >95% | Module 6: Compliance |
+| **Trust Verification** | Counterfactuals | User confidence | >80% | Module 5: Human-AI |
+
+*Source: Duke University Coursera Course "Explainable AI: Scene Understanding and Generation" (2024)*
 - **Output Perturbation**: Add noise to prevent exact model replication
 - **Access Logging**: Monitor all model access patterns
 
@@ -165,7 +308,7 @@ def sanitize_prompt(user_input: str) -> str:
 **Research Findings**: Organizations with AI governance see 60% fewer incidents (Deloitte, 2024)
 
 ```mermaid
-flowchart LR
+graph LR
     classDef governance fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
     classDef process fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
     

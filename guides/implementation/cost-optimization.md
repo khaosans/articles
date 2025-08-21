@@ -36,7 +36,7 @@ This guide provides comprehensive cost optimization strategies for AI/ML systems
 **Research Findings**: AI infrastructure costs are growing 40% annually (McKinsey, 2024)
 
 ```mermaid
-flowchart LR
+graph LR
     classDef cost fill:#ffebee,stroke:#d32f2f,stroke-width:2px
     classDef trend fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
     

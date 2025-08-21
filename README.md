@@ -86,7 +86,7 @@
 ## 🏗️ Enterprise AI Architecture Overview
 
 ```mermaid
-flowchart TD
+graph TD
     classDef data fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
     classDef ml fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000
     classDef ai fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
