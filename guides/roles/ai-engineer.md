@@ -139,9 +139,9 @@ The AI Engineer has evolved from an infrastructural afterthought to a strategic 
 
 Bureau of Labor Statistics. *Employment Projections*. U.S. Department of Labor, 2023.
 
-DataCamp. "Essential Skills for AI Engineers." *DataCamp Blog*, 2024, [www.datacamp.com/blog/ai-engineer-skills](http://www.datacamp.com/blog/ai-engineer-skills).
+DataCamp. "Essential Skills for AI Engineers." *DataCamp Blog*, 2024.
 
-Forbes. "Why AI Engineers Are in High Demand." *Forbes*, 2025, [www.forbes.com/sites/ai-engineering-demand](http://www.forbes.com/sites/ai-engineering-demand).
+Forbes. "Why AI Engineers Are in High Demand." *Forbes*, 2025.
 
 Google Cloud Blog. "Optimizing Translation Models with Pruning." *Google Cloud Blog*, 12 Nov. 2024, cloud.google.com/blog.
 
@@ -157,5 +157,5 @@ Mobilunity. "AI Engineer Responsibilities and Scope." *Mobilunity Blog*, 2025, m
 
 Upwork. "Understanding the AI Engineer Role." *Upwork Resources*, 2025, upwork.com/resources.
 
-Zendesk. "E-commerce Chatbot Implementation." *Zendesk Case Studies*, 2024, [www.zendesk.com/customer/chatbots](http://www.zendesk.com/customer/chatbots).
+Zendesk. "E-commerce Chatbot Implementation." *Zendesk Case Studies*, 2024.
 

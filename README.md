@@ -57,12 +57,12 @@
 **Key Content**: Architecture patterns, tooling, best practices  
 **Best For**: Building scalable ML infrastructure
 
-#### [Security Guide](guides/implementation/security-guide.md) *(Coming Soon)*
+#### [Security Guide](guides/implementation/security-guide.md)
 **Purpose**: AI/ML security best practices and compliance  
 **Key Content**: Threat modeling, data protection, audit trails  
 **Best For**: Securing AI systems in enterprise environments
 
-#### [Cost Optimization](guides/implementation/cost-optimization.md) *(Coming Soon)*
+#### [Cost Optimization](guides/implementation/cost-optimization.md)
 **Purpose**: Managing AI/ML infrastructure costs effectively  
 **Key Content**: Token economics, resource optimization, ROI tracking  
 **Best For**: Optimizing AI system costs and budgets
