@@ -38,11 +38,14 @@ jobs:
         python verify_docs.py
         echo "📊 Extracting Mermaid diagrams..."
         python extract_mermaid.py
-        echo "🔗 Testing internal links..."
+        echo "🔗 Testing links..."
         python test_links.py
         
-    - name: Verify Mermaid diagrams
+    - name: Verify results
       run: |
+        echo "📊 Checking verification results..."
+        
+        # Check Mermaid diagrams
         if [ -d "extracted_diagrams" ] && [ -f "extracted_diagrams/summary.json" ]; then
           echo "📊 Found $(jq '.total_diagrams' extracted_diagrams/summary.json) Mermaid diagrams"
           echo "✅ Mermaid diagram extraction successful"
@@ -51,14 +54,18 @@ jobs:
           exit 1
         fi
         
-    - name: Verify link testing
-      run: |
+        # Check link testing results (only fail on internal link failures)
         if [ -f "link_test_results.json" ]; then
-          failed_links=$(jq '.summary.total_failed' link_test_results.json)
-          if [ "$failed_links" -eq 0 ]; then
-            echo "✅ All links tested successfully"
+          internal_failed=$(jq '.internal.failed' link_test_results.json)
+          external_failed=$(jq '.external.failed' link_test_results.json)
+          
+          if [ "$internal_failed" -eq 0 ]; then
+            echo "✅ All internal links working"
+            if [ "$external_failed" -gt 0 ]; then
+              echo "⚠️  Found $external_failed external link failures (warnings only)"
+            fi
           else
-            echo "❌ Found $failed_links failed links"
+            echo "❌ Found $internal_failed internal link failures (CRITICAL)"
             exit 1
           fi
         else
