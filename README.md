@@ -259,8 +259,8 @@ pie title Content Distribution by Type
 
 ### 🎯 **Start Here**
 - **[📊 Main Research Guide](reports/ai-roles-workflows-comprehensive.md)** - Complete framework and analysis
-- **[👥 Role Definitions](reports/ai-roles-workflows-comprehensive.md#1-role-taxonomy--definitions-research-based)** - Detailed role breakdowns
-- **[🏢 Organizational Patterns](reports/ai-roles-workflows-comprehensive.md#2-organizational-patterns-evidence-based)** - Team structure best practices
+- **[👥 Role Definitions](reports/ai-roles-workflows-comprehensive.md)** - Detailed role breakdowns
+- **[🏢 Organizational Patterns](reports/ai-roles-workflows-comprehensive.md)** - Team structure best practices
 
 ### 🔧 **Implementation Resources**
 - **[⚙️ MLOps Architecture](guides/implementation/mlops-architecture.md)** - Production deployment strategies
