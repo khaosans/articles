@@ -423,21 +423,25 @@ pie title AI Project Cost Distribution (2024)
 
 *Figure 7: AI Project Cost Breakdown. Illustrates typical cost distribution in AI projects, with model API costs representing the largest expense (35%), followed by infrastructure (25%) and data processing (20%).*
 
-### Skill Assessment Radar Chart
+### Skill Assessment Matrix
 
-```mermaid
-radar title AI Engineer Skill Assessment
-    "Prompt Engineering" : 85
-    "RAG Systems" : 90
-    "API Development" : 80
-    "Security" : 70
-    "Cost Optimization" : 75
-    "Monitoring" : 80
-    "Testing" : 85
-    "Documentation" : 90
-```
+| Skill Area | Proficiency | Level | Priority |
+|------------|-------------|-------|----------|
+| **RAG Systems** | 90% | Expert | High |
+| **Documentation** | 90% | Expert | High |
+| **Prompt Engineering** | 85% | Advanced | High |
+| **Testing** | 85% | Advanced | Medium |
+| **API Development** | 80% | Advanced | High |
+| **Monitoring** | 80% | Advanced | Medium |
+| **Cost Optimization** | 75% | Working | Medium |
+| **Security** | 70% | Working | **Critical** |
 
-*Figure 8: AI Engineer Skill Assessment Radar Chart. Shows proficiency levels across 8 key skill areas for an AI Engineer, with RAG Systems and Documentation being the strongest areas (90%) and Security being the area for improvement (70%).*
+**Assessment Summary:**
+- **Strengths**: RAG Systems, Documentation (90% proficiency)
+- **Areas for Improvement**: Security (70% proficiency)
+- **Development Focus**: Security training and implementation
+
+*Figure 8: AI Engineer Skill Assessment Matrix. Shows proficiency levels across 8 key skill areas for an AI Engineer, with RAG Systems and Documentation being the strongest areas (90%) and Security being the critical area for improvement (70%).*
 
 ---
 
@@ -464,79 +468,48 @@ radar title AI Engineer Skill Assessment
 - **Product/UX scenario** (failure modes, fallback UX), accessibility considerations  
 - **Values & safety** (privacy, PII, security mindset), ethical AI principles
 
-### AI System Lifecycle State Diagram
+### AI System Lifecycle Phases
 
-```mermaid
-stateDiagram-v2
-    [*] --> Planning
-    Planning --> Development
-    Development --> Testing
-    Testing --> Staging
-    Staging --> Production
-    Production --> Monitoring
-    Monitoring --> Maintenance
-    Maintenance --> Production
-    Production --> Retirement
-    Retirement --> [*]
-    
-    Testing --> Development : Issues Found
-    Staging --> Development : Failures
-    Production --> Development : Critical Bugs
-    Monitoring --> Development : Performance Issues
-```
+| Phase | Description | Key Activities | Duration | Success Criteria |
+|-------|-------------|----------------|----------|------------------|
+| **Planning** | Requirements gathering and architecture design | Stakeholder interviews, technical feasibility, resource planning | 2-4 weeks | Approved technical specification |
+| **Development** | Core system implementation | Model development, API creation, integration testing | 8-12 weeks | Functional prototype |
+| **Testing** | Quality assurance and validation | Unit tests, integration tests, performance testing | 2-3 weeks | 95% test coverage |
+| **Staging** | Pre-production deployment | User acceptance testing, security validation | 1-2 weeks | Stakeholder approval |
+| **Production** | Live system deployment | Monitoring setup, performance optimization | Ongoing | 99.9% uptime |
+| **Monitoring** | Continuous system oversight | Performance tracking, alert management | Ongoing | <5 minute response time |
+| **Maintenance** | System updates and improvements | Bug fixes, feature updates, security patches | Ongoing | Zero critical incidents |
+| **Retirement** | System decommissioning | Data migration, documentation, knowledge transfer | 2-4 weeks | Complete system shutdown |
 
-*Figure 9: AI System Lifecycle State Diagram. Illustrates the complete lifecycle of an AI system from planning through retirement, with feedback loops for continuous improvement and error handling.*
+**Feedback Mechanisms:**
+- **Testing → Development**: Issues found trigger development iterations
+- **Staging → Development**: Failures require code fixes
+- **Production → Development**: Critical bugs necessitate immediate patches
+- **Monitoring → Development**: Performance issues drive optimization
 
-### Team Structure Class Diagram
+*Figure 9: AI System Lifecycle Phases. Illustrates the complete lifecycle of an AI system from planning through retirement, with detailed phases, activities, and feedback loops for continuous improvement.*
 
-```mermaid
-classDiagram
-    class AI_Team {
-        +String team_name
-        +int team_size
-        +String project_phase
-        +List~Role~ roles
-        +add_member(Role)
-        +remove_member(Role)
-    }
-    
-    class Role {
-        <<abstract>>
-        +String title
-        +String level
-        +List~Skill~ skills
-        +List~Responsibility~ responsibilities
-        +get_salary_range()
-    }
-    
-    class AI_Engineer {
-        +String specialization
-        +List~Model~ deployed_models
-        +optimize_performance()
-        +deploy_model()
-    }
-    
-    class ML_Engineer {
-        +String ml_framework
-        +List~Pipeline~ pipelines
-        +train_model()
-        +evaluate_model()
-    }
-    
-    class Data_Engineer {
-        +String data_stack
-        +List~Pipeline~ etl_pipelines
-        +build_pipeline()
-        +maintain_data_quality()
-    }
-    
-    AI_Team ||--o{ Role : contains
-    Role <|-- AI_Engineer
-    Role <|-- ML_Engineer
-    Role <|-- Data_Engineer
-```
+### Team Structure Framework
 
-*Figure 10: AI Team Structure Class Diagram. Shows the object-oriented design of AI teams with abstract Role class and concrete implementations for AI Engineer, ML Engineer, and Data Engineer roles.*
+| Component | Attributes | Methods | Responsibilities |
+|-----------|------------|---------|------------------|
+| **AI_Team** | team_name, team_size, project_phase, roles | add_member(), remove_member() | Team management and coordination |
+| **Role (Abstract)** | title, level, skills, responsibilities | get_salary_range() | Base role definition |
+| **AI_Engineer** | specialization, deployed_models | optimize_performance(), deploy_model() | LLM integration, API design, monitoring |
+| **ML_Engineer** | ml_framework, pipelines | train_model(), evaluate_model() | Model training, feature engineering, MLOps |
+| **Data_Engineer** | data_stack, etl_pipelines | build_pipeline(), maintain_data_quality() | Data infrastructure, ETL processes |
+
+**Team Composition Guidelines:**
+- **Small Team (3-5 members)**: 1 AI Engineer, 1 ML Engineer, 1 Data Engineer
+- **Medium Team (6-10 members)**: 2 AI Engineers, 2 ML Engineers, 2 Data Engineers, 1 AI Developer
+- **Large Team (11+ members)**: 3+ AI Engineers, 3+ ML Engineers, 2+ Data Engineers, 2+ AI Developers, 1 AI Security Engineer
+
+**Role Relationships:**
+- AI_Team **contains** multiple Role instances
+- Role serves as **abstract base class** for all team members
+- AI_Engineer, ML_Engineer, and Data_Engineer **implement** the Role interface
+
+*Figure 10: AI Team Structure Framework. Shows the object-oriented design of AI teams with abstract Role class and concrete implementations for AI Engineer, ML Engineer, and Data Engineer roles, including team composition guidelines.*
 
 ---
 
